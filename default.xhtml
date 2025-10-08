@@ -18,10 +18,22 @@
 	<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> (short for <em>American Standard Code for Information Interchange</em>) is a historically important <strong>character-set</strong> that people billions of people have used either on its own or embedded in other <strong>character-sets</strong> such as <strong><abbr title="code page 437">CP437</abbr></strong> (code page 437), <strong>Unicode</strong>, and others.
 </p>
 <p>
-	It affected what symbols were shown on many computer-keyboards.
+	<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> includes
+	symbols for the upper-case (A-Z) and lower-case (a-z) versions of the English-language <em>alphabet</em>,
+	symbols for <em>arabic-numerals</em> (0-9),
+	symbols for many English-language <em>punctuation marks</em>,
+	symbols for some <em>diacritical marks</em>,
+	and <em>control-codes</em>.
+</p>
+<p>
+	<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> has affected what symbols were shown on many computer-keyboards.
 	It affected what symbols were shown on many computer-screens.
 	It affected what symbols were formed the basis of many Internet computer-protocols.
 	And more.
+</p>
+<p>
+	As of the year 2025, the <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> <strong>character-set</strong> is still in use as part of the <strong>Unicode</strong> <strong>character-set</strong>.
+	And, often by itself, for many Internet computer-protocols.
 </p>
 <section>
 	<h2>128 Characters</h2>
@@ -46,7 +58,7 @@
 					<th>HTML (dec)</th>
 					<th>HTML (hex)</th>
 					<th>Unicode</th>
-					<th>Description</th>
+					<th>Name</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -226,6 +238,28 @@
 					<td><code>U+000F</code></td>
 					<td>shift in</td>
 				</tr>
+				<tr>
+					<td><a href="dle/">DLE</a></td>
+					<td></td>
+					<td>16</td>
+					<td><code>0x10</code></td>
+					<td><code>0b0010000</code></td>
+					<td><code>&amp;#16;</code></td>
+					<td><code>&amp;#x10;</code></td>
+					<td><code>U+0010</code></td>
+					<td>data link escape</td>
+				</tr>
+				<tr>
+					<td><a href="dc1/">DC1</a></td>
+					<td></td>
+					<td>17</td>
+					<td><code>0x11</code></td>
+					<td><code>0b0010001</code></td>
+					<td><code>&amp;#17;</code></td>
+					<td><code>&amp;#x11;</code></td>
+					<td><code>U+0011</code></td>
+					<td>device control 1</td>
+				</tr>
 
 
 
@@ -250,6 +284,49 @@
 		<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> has 128 characters.
 		This means that <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> characters can be encoded into <strong>7-bits</strong>.
 	</p>
+</section>
+<section>
+	<h2>Upper-Case versus Lower-Case</h2>
+	<p>
+		In binary, upper-case letters and lower-case letters have very similar representations.
+		The only difference being 1 bit.
+		And, in particular, the only difference being bit-5.
+	</p>
+	<p>
+		For example, consider the encoding for upper-case "A" versus lower-case "a":
+	</p>
+	<figure>
+<pre><code>
+  ↓
+01000001 (A)
+01100001 (a)
+  ↑
+</code></pre>
+	</figure>
+	<p>
+		For another example, consider the encoding for upper-case "Z" versus lower-case "z":
+	</p>
+	<figure>
+<pre><code>
+  ↓
+01011010 (Z)
+01111010 (z)
+  ↑
+</code></pre>
+	</figure>
+	<p>
+		This pattern is true for every letter in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+	</p>
+	<p>
+		This means that a number of bit-tricks can be used to do things such as:
+	</p>
+	<ul>
+		<li>compare characters in a case-insensitive manner,</li>
+		<li>lower-case all characters,</li>
+		<li>upper-case all characters,</li>
+		<li>toggle between upper-case and lower-case (and vice-versa),</li>
+		<li><em>etc</em>.</li>
+	</ul>
 </section>
 </article>
 </main>
