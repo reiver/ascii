@@ -491,23 +491,41 @@
 		For example, consider the encoding for upper-case “A” versus lower-case “a”:
 	</p>
 	<figure>
-<pre><code>
-  ↓
-01000001 (A)
-01100001 (a)
-  ↑
-</code></pre>
+<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+    ↑       ↑       ↑       ↑       ↑       ↑       ↑
+ bit 6    bit 5   bit 4   bit 3   bit 2   bit 1    bit 0
+    ↓       ↓       ↓       ↓       ↓       ↓       ↓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “a”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+</pre>
 	</figure>
 	<p>
 		For another example, consider the encoding for upper-case “Z” versus lower-case “z”:
 	</p>
 	<figure>
-<pre><code>
-  ↓
-01011010 (Z)
-01111010 (z)
-  ↑
-</code></pre>
+<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   1   │   1   │   0   │   1   │   0   │ (ASCII character “Z”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+    ↑       ↑       ↑       ↑       ↑       ↑       ↑
+ bit 6    bit 5   bit 4   bit 3   bit 2   bit 1    bit 0
+    ↓       ↓       ↓       ↓       ↓       ↓       ↓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   1   │   1   │   0   │   1   │   0   │ (ASCII character “z”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+</pre>
 	</figure>
 	<p>
 		This pattern is true for every letter in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
