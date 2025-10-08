@@ -302,6 +302,18 @@
 		<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> has 128 characters.
 		This means that <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> characters can be encoded into <strong>7-bits</strong>.
 	</p>
+	<p>
+		For example, here is the 7-bit binary encoding of the <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> character “@”:
+	</p>
+	<figure>
+<pre><code>
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   0   │   0   │   0   │   0   │ (ASCII character “@”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+    ↑       ↑       ↑       ↑       ↑       ↑       ↑
+ bit 6    bit 5   bit 4   bit 3   bit 2  bit 1    bit 0
+</code></pre>
+	</figure>
 </section>
 <section>
 	<h2>Upper-Case versus Lower-Case</h2>
@@ -311,7 +323,7 @@
 		And, in particular, the only difference being bit-5.
 	</p>
 	<p>
-		For example, consider the encoding for upper-case "A" versus lower-case "a":
+		For example, consider the encoding for upper-case “A” versus lower-case “a”:
 	</p>
 	<figure>
 <pre><code>
@@ -322,7 +334,7 @@
 </code></pre>
 	</figure>
 	<p>
-		For another example, consider the encoding for upper-case "Z" versus lower-case "z":
+		For another example, consider the encoding for upper-case “Z” versus lower-case “z”:
 	</p>
 	<figure>
 <pre><code>
