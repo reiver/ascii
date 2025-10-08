@@ -52,6 +52,7 @@
 					<th>Character</th>
 					<th>Short-Code</th>
 					<th>Unicode Control Picture</th>
+					<th>Carot Notation</th>
 					<th>Decimal</th>
 					<th>Hexadecimal</th>
 					<th>Binary</th>
@@ -66,6 +67,7 @@
 					<td></td>
 					<td><a href="nul/">NUL</a></td>
 					<td>␀</td>
+					<td><code>^@</code></td>
 					<td>0</td>
 					<td><code>0x00</code></td>
 					<td><code>0b0000000</code></td>
@@ -78,6 +80,7 @@
 					<td></td>
 					<td><a href="soh/">SOH</a></td>
 					<td>␁</td>
+					<td><code>^A</code></td>
 					<td>1</td>
 					<td><code>0x01</code></td>
 					<td><code>0b0000001</code></td>
@@ -90,6 +93,7 @@
 					<td></td>
 					<td><a href="stx/">STX</a></td>
 					<td>␂</td>
+					<td><code>^B</code></td>
 					<td>2</td>
 					<td><code>0x02</code></td>
 					<td><code>0b0000010</code></td>
@@ -102,6 +106,7 @@
 					<td></td>
 					<td><a href="etx/">ETX</a></td>
 					<td>␃</td>
+					<td><code>^C</code></td>
 					<td>3</td>
 					<td><code>0x03</code></td>
 					<td><code>0b0000011</code></td>
@@ -114,6 +119,7 @@
 					<td></td>
 					<td><a href="eot/">EOT</a></td>
 					<td>␄</td>
+					<td><code>^D</code></td>
 					<td>4</td>
 					<td><code>0x04</code></td>
 					<td><code>0b0000100</code></td>
@@ -126,6 +132,7 @@
 					<td></td>
 					<td><a href="enq/">ENQ</a></td>
 					<td>␅</td>
+					<td><code>^E</code></td>
 					<td>5</td>
 					<td><code>0x05</code></td>
 					<td><code>0b0000101</code></td>
@@ -138,6 +145,7 @@
 					<td></td>
 					<td><a href="ack/">ACK</a></td>
 					<td>␆</td>
+					<td><code>^F</code></td>
 					<td>6</td>
 					<td><code>0x06</code></td>
 					<td><code>0b0000110</code></td>
@@ -150,6 +158,7 @@
 					<td></td>
 					<td><a href="bel/">BEL</a></td>
 					<td>␇</td>
+					<td><code>^G</code></td>
 					<td>7</td>
 					<td><code>0x07</code></td>
 					<td><code>0b0000111</code></td>
@@ -162,6 +171,7 @@
 					<td></td>
 					<td><a href="bs/">BS</a></td>
 					<td>␈</td>
+					<td><code>^G</code></td>
 					<td>8</td>
 					<td><code>0x08</code></td>
 					<td><code>0b0001000</code></td>
@@ -174,6 +184,7 @@
 					<td></td>
 					<td><a href="ht/">HT</a></td>
 					<td>␉</td>
+					<td><code>^H</code></td>
 					<td>9</td>
 					<td><code>0x09</code></td>
 					<td><code>0b0001001</code></td>
@@ -186,6 +197,7 @@
 					<td></td>
 					<td><a href="lf/">LF</a></td>
 					<td>␊</td>
+					<td><code>^I</code></td>
 					<td>10</td>
 					<td><code>0x0A</code></td>
 					<td><code>0b0001010</code></td>
@@ -198,6 +210,7 @@
 					<td></td>
 					<td><a href="vt/">VT</a></td>
 					<td>␋</td>
+					<td><code>^J</code></td>
 					<td>11</td>
 					<td><code>0x0B</code></td>
 					<td><code>0b0001011</code></td>
@@ -210,6 +223,7 @@
 					<td></td>
 					<td><a href="ff/">FF</a></td>
 					<td>␌</td>
+					<td><code>^K</code></td>
 					<td>12</td>
 					<td><code>0x0C</code></td>
 					<td><code>0b0001100</code></td>
@@ -222,6 +236,7 @@
 					<td></td>
 					<td><a href="cr/">CR</a></td>
 					<td>␍</td>
+					<td><code>^L</code></td>
 					<td>13</td>
 					<td><code>0x0D</code></td>
 					<td><code>0b0001101</code></td>
@@ -234,6 +249,7 @@
 					<td></td>
 					<td><a href="so/">SO</a></td>
 					<td>␎</td>
+					<td><code>^M</code></td>
 					<td>14</td>
 					<td><code>0x0E</code></td>
 					<td><code>0b0001110</code></td>
@@ -246,6 +262,7 @@
 					<td></td>
 					<td><a href="si/">SI</a></td>
 					<td>␏</td>
+					<td><code>^N</code></td>
 					<td>15</td>
 					<td><code>0x0F</code></td>
 					<td><code>0b0001111</code></td>
@@ -258,6 +275,7 @@
 					<td></td>
 					<td><a href="dle/">DLE</a></td>
 					<td>␐</td>
+					<td><code>^O</code></td>
 					<td>16</td>
 					<td><code>0x10</code></td>
 					<td><code>0b0010000</code></td>
@@ -270,6 +288,7 @@
 					<td></td>
 					<td><a href="dc1/">DC1</a></td>
 					<td>␑</td>
+					<td><code>^P</code></td>
 					<td>17</td>
 					<td><code>0x11</code></td>
 					<td><code>0b0010001</code></td>
@@ -285,6 +304,7 @@
 					<td></td>
 					<td><a href="del/">DEL</a></td>
 					<td>␡</td>
+					<td><code>^?</code></td>
 					<td>127</td>
 					<td><code>0x7F</code></td>
 					<td><code>0b1111111</code></td>
