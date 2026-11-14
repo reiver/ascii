@@ -1834,6 +1834,166 @@
 			<li>toggle between upper-case and lower-case (and vice-versa),</li>
 			<li><em>etc</em>.</li>
 		</ul>
+		<p>
+			All of these bit-tricks work by changing only bit-5.
+			Bit-5 has the value <code>0x20</code> (binary <code>0b0100000</code>).
+		</p>
+		<p>
+			They use three <strong>bitwise-operations</strong>, which work on each bit separately:
+		</p>
+		<ul>
+			<li><strong>bitwise-OR</strong> (<code>|</code>) — sets a bit to 1 wherever the <em>mask</em> has a 1,</li>
+			<li><strong>bitwise-AND</strong> (<code>&amp;</code>) — clears a bit to 0 wherever the <em>mask</em> has a 0,</li>
+			<li><strong>bitwise-XOR</strong> (<code>^</code>) — flips a bit wherever the <em>mask</em> has a 1.</li>
+		</ul>
+		<p>
+			Bits where the <em>mask</em> does not say to change anything are left alone.
+		</p>
+		<p>
+			To lower-case a letter, bitwise-OR it with <code>0x20</code>:
+		</p>
+		<figure>
+			<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                           OR
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   0   │   0   │   0   │   0   │   0   │ (mask 0x20)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                            =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “a”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+			</pre>
+		</figure>
+		<p>
+			To upper-case a letter, bitwise-AND it with <code>0x5F</code> — a <em>mask</em> with every bit set except bit-5:
+		</p>
+		<figure>
+			<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “a”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                           AND
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   1   │   1   │   1   │   1   │   1   │ (mask 0x5F)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                            =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+			</pre>
+		</figure>
+		<p>
+			To toggle a letter between upper-case and lower-case, bitwise-XOR it with <code>0x20</code>.
+			This works in both directions — here it turns a lower-case letter into an upper-case letter:
+		</p>
+		<figure>
+			<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “a”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                           XOR
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   0   │   0   │   0   │   0   │   0   │ (mask 0x20)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                            =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (ASCII character “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+			</pre>
+		</figure>
+		<p>
+			And, to compare two letters in a case-insensitive manner, lower-case both of them, and then compare them.
+		</p>
+		<p>
+			In summary:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Operation</th>
+						<th>Effect</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>c | 0x20</code></td>
+						<td>lower-case (sets bit-5)</td>
+						<td><code>A</code> (<code>0x41</code>) → <code>a</code> (<code>0x61</code>)</td>
+					</tr>
+					<tr>
+						<td><code>c &amp; 0x5F</code></td>
+						<td>upper-case (clears bit-5)</td>
+						<td><code>a</code> (<code>0x61</code>) → <code>A</code> (<code>0x41</code>)</td>
+					</tr>
+					<tr>
+						<td><code>c ^ 0x20</code></td>
+						<td>toggle case (flips bit-5)</td>
+						<td><code>A</code> (<code>0x41</code>) ↔ <code>a</code> (<code>0x61</code>)</td>
+					</tr>
+					<tr>
+						<td><code>(a | 0x20) == (b | 0x20)</code></td>
+						<td>case-insensitive compare</td>
+						<td><code>Q</code> versus <code>q</code> → equal</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language:
+		</p>
+		<figure>
+			<pre>
+<code>package main
+
+import "fmt"
+
+// toLower sets bit-5, which turns an upper-case letter into a lower-case letter.
+func toLower(c byte) byte {
+	return c | 0x20
+}
+
+// toUpper clears bit-5, which turns a lower-case letter into an upper-case letter.
+func toUpper(c byte) byte {
+	return c &amp; 0x5F
+}
+
+// toggleCase flips bit-5, which switches a letter between upper-case and lower-case.
+func toggleCase(c byte) byte {
+	return c ^ 0x20
+}
+
+// equalFold compares two letters in a case-insensitive manner.
+func equalFold(a, b byte) bool {
+	return toLower(a) == toLower(b)
+}
+
+func main() {
+	fmt.Printf("%c\n", toLower('A'))    // a
+	fmt.Printf("%c\n", toUpper('a'))    // A
+	fmt.Printf("%c\n", toggleCase('A')) // a
+	fmt.Printf("%c\n", toggleCase('a')) // A
+	fmt.Println(equalFold('Q', 'q'))    // true
+	fmt.Println(equalFold('Q', 'r'))    // false
+}</code>
+			</pre>
+		</figure>
 	</section>
 	<section>
 		<h1>Arabic-Numerals <abbr title="least-significant nibble">LSN</abbr></h1>
@@ -1981,6 +2141,101 @@
 		<p>
 			That means that you could use bit-tricks to convert from the <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> code to the binary-code for the number, and vice-versa.
 		</p>
+		<p>
+			Every one of the 10 Arabic-numerals has <code>0b011</code> in its most-significant bits (i.e., <code>0x30</code>).
+			Only the <abbr title="least-significant nibble">LSN</abbr> changes.
+		</p>
+		<p>
+			So, to get the number from an Arabic-numeral character, bitwise-AND it with <code>0x0F</code> — a <em>mask</em> that keeps only the <abbr title="least-significant nibble">LSN</abbr>:
+		</p>
+		<figure>
+			<pre>
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   1   │   0   │   1   │   1   │   1   │ (ASCII character “7”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                           AND
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   0   │   0   │   1   │   1   │   1   │   1   │ (mask 0x0F)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                            =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   0   │   0   │   0   │   1   │   1   │   1   │ (the number 7)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+			</pre>
+		</figure>
+		<p>
+			And, to get the Arabic-numeral character from a number (0 to 9), bitwise-OR it with <code>0x30</code>:
+		</p>
+		<figure>
+			<pre>
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   0   │   0   │   0   │   1   │   1   │   1   │ (the number 7)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                           OR
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   1   │   0   │   0   │   0   │   0   │ (mask 0x30)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                            =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   1   │   0   │   1   │   1   │   1   │ (ASCII character “7”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+			</pre>
+		</figure>
+		<p>
+			(See the “Upper-Case versus Lower-Case” section for what bitwise-AND and bitwise-OR do.)
+		</p>
+		<p>
+			In summary:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Operation</th>
+						<th>Effect</th>
+						<th>Example</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>c &amp; 0x0F</code></td>
+						<td>Arabic-numeral character → number</td>
+						<td><code>7</code> (<code>0x37</code>) → 7</td>
+					</tr>
+					<tr>
+						<td><code>n | 0x30</code></td>
+						<td>number → Arabic-numeral character</td>
+						<td>7 → <code>7</code> (<code>0x37</code>)</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language:
+		</p>
+		<figure>
+			<pre>
+<code>package main
+
+import "fmt"
+
+// digitValue keeps only the least-significant nibble, which turns an Arabic-numeral character into its number.
+func digitValue(c byte) byte {
+	return c &amp; 0x0F
+}
+
+// digitChar sets bits 4 and 5, which turns a number (0 to 9) into its Arabic-numeral character.
+func digitChar(n byte) byte {
+	return n | 0x30
+}
+
+func main() {
+	fmt.Println(digitValue('7'))                   // 7
+	fmt.Printf("%c\n", digitChar(7))               // 7
+	fmt.Println(digitValue('3') + digitValue('4')) // 7
+}</code>
+			</pre>
+		</figure>
 	</section>
 	<footer>
 		<include src="author.html" />
