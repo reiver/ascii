@@ -1969,7 +1969,7 @@
 			</table>
 		</figure>
 		<p>
-			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language (<strong><abbr title="Go programming-language">Golang</abbr></strong>):
+			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language (<strong><abbr title="Go programming-language">Golang</abbr></strong>), <em>without</em> any checks:
 		</p>
 		<figure>
 			<pre>
@@ -2004,6 +2004,76 @@ func main() {
 	fmt.Printf("%c\n", toggleCase('a')) // A
 	fmt.Println(equalFold('Q', 'q'))    // true
 	fmt.Println(equalFold('Q', 'r'))    // false
+}</code>
+			</pre>
+		</figure>
+		<p>
+			And, here is a version of these functions <em>with</em> checks — they only use the bit-tricks on letters, and leave every other character unchanged:
+		</p>
+		<figure>
+			<pre>
+<code>package main
+
+import "fmt"
+
+// isUpper reports whether c is an upper-case letter (A to Z).
+func isUpper(c byte) bool {
+	return 'A' &lt;= c &amp;&amp; c &lt;= 'Z'
+}
+
+// isLower reports whether c is a lower-case letter (a to z).
+func isLower(c byte) bool {
+	return 'a' &lt;= c &amp;&amp; c &lt;= 'z'
+}
+
+// isLetter reports whether c is a letter (A to Z, or a to z).
+func isLetter(c byte) bool {
+	return isUpper(c) || isLower(c)
+}
+
+// toLower sets bit-5, but only if c is an upper-case letter.
+// Any other character is returned unchanged.
+func toLower(c byte) byte {
+	if !isUpper(c) {
+		return c
+	}
+	return c | 0x20
+}
+
+// toUpper clears bit-5, but only if c is a lower-case letter.
+// Any other character is returned unchanged.
+func toUpper(c byte) byte {
+	if !isLower(c) {
+		return c
+	}
+	return c &amp; 0x5F
+}
+
+// toggleCase flips bit-5, but only if c is a letter.
+// Any other character is returned unchanged.
+func toggleCase(c byte) byte {
+	if !isLetter(c) {
+		return c
+	}
+	return c ^ 0x20
+}
+
+// equalFold compares two characters in a case-insensitive manner.
+// Because toLower only changes letters, other characters must match exactly.
+func equalFold(a, b byte) bool {
+	return toLower(a) == toLower(b)
+}
+
+func main() {
+	fmt.Printf("%c\n", toLower('A'))    // a
+	fmt.Printf("%c\n", toUpper('a'))    // A
+	fmt.Printf("%c\n", toggleCase('A')) // a
+	fmt.Printf("%c\n", toggleCase('a')) // A
+	fmt.Println(equalFold('Q', 'q'))    // true
+
+	fmt.Printf("%c\n", toLower('@'))    // @
+	fmt.Printf("%c\n", toggleCase('[')) // [
+	fmt.Println(equalFold('@', '`'))    // false
 }</code>
 			</pre>
 		</figure>
@@ -2232,7 +2302,7 @@ func main() {
 			</table>
 		</figure>
 		<p>
-			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language (<strong><abbr title="Go programming-language">Golang</abbr></strong>):
+			Here is what these bit-tricks look like in the <strong>Go</strong> programming-language (<strong><abbr title="Go programming-language">Golang</abbr></strong>), <em>without</em> any checks:
 		</p>
 		<figure>
 			<pre>
@@ -2254,6 +2324,50 @@ func main() {
 	fmt.Println(digitValue('7'))                   // 7
 	fmt.Printf("%c\n", digitChar(7))               // 7
 	fmt.Println(digitValue('3') + digitValue('4')) // 7
+}</code>
+			</pre>
+		</figure>
+		<p>
+			And, here is a version of these functions <em>with</em> checks — they also return a <code>bool</code> that is <code>false</code> if the input is not an Arabic-numeral character, or not a number from 0 to 9:
+		</p>
+		<figure>
+			<pre>
+<code>package main
+
+import "fmt"
+
+// isDigit reports whether c is an Arabic-numeral character (0 to 9).
+func isDigit(c byte) bool {
+	return '0' &lt;= c &amp;&amp; c &lt;= '9'
+}
+
+// digitValue keeps only the least-significant nibble, which turns an Arabic-numeral character into its number.
+// The second return value is false if c is not an Arabic-numeral character.
+func digitValue(c byte) (byte, bool) {
+	if !isDigit(c) {
+		return 0, false
+	}
+	return c &amp; 0x0F, true
+}
+
+// digitChar sets bits 4 and 5, which turns a number into its Arabic-numeral character.
+// The second return value is false if n is not from 0 to 9.
+func digitChar(n byte) (byte, bool) {
+	if 9 &lt; n {
+		return 0, false
+	}
+	return n | 0x30, true
+}
+
+func main() {
+	fmt.Println(digitValue('7')) // 7 true
+	fmt.Println(digitValue('G')) // 0 false
+
+	c, ok := digitChar(7)
+	fmt.Printf("%c %t\n", c, ok) // 7 true
+
+	_, ok = digitChar(10)
+	fmt.Println(ok) // false
 }</code>
 			</pre>
 		</figure>
