@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/text-readability/readmode.css" />
+<title>History of ASCII</title>
+<meta name="author" content="Charles Iliya Krempeaux" />
+<meta name="category" content="american standard code for information interchange" />
+<meta name="category" content="ascii" />
+<meta name="category" content="code page 437" />
+<meta name="category" content="cp437" />
+<meta name="category" content="petscii" />
+<meta name="category" content="unicode" />
+</head>
+<body>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li><a href="../">ASCII</a></li>
+		<li><a href="./" aria-current="page">History</a></li>
+	</ol>
+</nav>
+
+<main>
+<article>
+	<header>
+		<hgroup>
+			<h1 property="headline">History of ASCII</h1>
+			<p>
+				how a 7-bit code came to be, and how it spread
+			</p>
+		</hgroup>
+		<p>
+			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
+		</p>
+	</header>
+	<p>
+		<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was not invented all at once, by one person, out of nothing.
+		It was designed by a committee, between 1960 and 1963, to fix problems that had built up over almost 100 years of <em>telegraph-codes</em>, <em>teleprinter-codes</em>, and early <em>computer-codes</em>.
+		And, after its first edition in 1963, it was revised several times — with the version most people know today being (more or less) settled by 1967.
+	</p>
+	<p>
+		This article goes through that history:
+		what came before <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>,
+		how <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was designed (and why it looks the way it does),
+		how it changed,
+		how it spread,
+		and how it lives on today inside <strong>Unicode</strong> and <strong><abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr></strong>.
+	</p>
+	<p>
+		(For an explanation of the <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> <strong>character-set</strong> itself, see <a href="../">ASCII</a>.)
+	</p>
+	<section>
+		<h1>Before ASCII</h1>
+		<section>
+			<h1>Telegraph-Codes</h1>
+			<p>
+				In the 1870s, <strong>Émile Baudot</strong>, of the French telegraph administration, created a <em>printing-telegraph</em> that used a <strong>5-unit code</strong>.
+				5 units gives only 32 combinations — which is not enough for letters <em>and</em> numerals.
+				So, Baudot's code used two special characters — a <em>letter-shift</em> and a <em>figure-shift</em> — to switch between two meanings for most of the other codes.
+			</p>
+			<p>
+				Around 1900, <strong>Donald Murray</strong> created a 5-unit code for a typewriter-like keyboard that punched paper-tape.
+				Murray arranged his code so that the most frequent letters punched the fewest holes (to reduce wear on the machinery).
+				And, by 1905, the <em>all-holes-punched</em> code had become a non-printing character — so that a typing mistake on the paper-tape could be “erased” by punching every hole over it.
+				This is the ancestor of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>'s <code>DEL</code> character.
+			</p>
+			<p>
+				Murray's code became the basis of <strong><abbr title="International Telegraph Alphabet No. 2">ITA2</abbr></strong> (<em>International Telegraph Alphabet No. 2</em>), which the <abbr title="International Telegraph Consultative Committee">CCIT</abbr> standardized in 1931.
+				<abbr title="International Telegraph Alphabet No. 2">ITA2</abbr> was used by teleprinters around the world for decades.
+				(<abbr title="International Telegraph Alphabet No. 2">ITA2</abbr> is often called “Baudot code”, but it descends mostly from Murray's code.)
+			</p>
+			<p>
+				But, these 5-unit codes had problems for computers:
+			</p>
+			<ul>
+				<li>they were <em>shifted</em> codes — the meaning of a code depended on whichever <em>shift</em> character came before it, so one lost <em>shift</em> character could garble everything after it,</li>
+				<li>the letters were not in alphabetical order, and the numerals were not in numeric order — so sorting by binary value did not work,</li>
+				<li>they had very few <em>control-codes</em>.</li>
+			</ul>
+		</section>
+		<section>
+			<h1>Computer-Codes</h1>
+			<p>
+				Early computers did not use telegraph-codes.
+				Each computer-maker created its own codes — often more than one.
+			</p>
+			<p>
+				<abbr title="International Business Machines">IBM</abbr>, for example, used 6-bit <strong><abbr title="binary-coded decimal">BCD</abbr></strong> codes derived from its punched-card code.
+				And, the US Army Signal Corps created <strong>FIELDATA</strong> (around 1959–1960), a code for military communications.
+			</p>
+			<p>
+				By 1960, there were <em>dozens</em> of incompatible character-codes in use.
+				Minutes from a 1960 industry committee counted at least 29.
+				Moving data from one manufacturer's equipment to another's meant translating it.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>The Committee</h1>
+		<p>
+			In 1960, the <strong><abbr title="American Standards Association">ASA</abbr></strong> (<em>American Standards Association</em>) set up a committee for computers and information processing, named <strong>X3</strong>.
+			X3 was organized on January 13th, 1960, and held its first meeting on August 4th, 1960.
+			At that meeting it created a subcommittee for character-codes, named <strong>X3.2</strong>.
+		</p>
+		<p>
+			X3.2 first met on October 6th, 1960.
+			This is the date generally given as the start of the work on <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+		</p>
+		<p>
+			X3.2's members came from the companies and organizations that made, or used, communication and computing equipment — including
+			<abbr title="American Telephone &amp; Telegraph">AT&amp;T</abbr>,
+			Bell Telephone Laboratories,
+			Teletype Corporation,
+			<abbr title="International Business Machines">IBM</abbr>,
+			Burroughs,
+			Sperry Rand,
+			<abbr title="National Cash Register">NCR</abbr>,
+			<abbr title="Radio Corporation of America">RCA</abbr>,
+			Honeywell,
+			and the US Department of Defense.
+			Its first chairman was I. C. Liggett, of <abbr title="International Business Machines">IBM</abbr>.
+			By the time the standard was published, the chairman was C. E. Macon, of Burroughs.
+		</p>
+		<p>
+			<abbr title="American Telephone &amp; Telegraph">AT&amp;T</abbr> had a practical reason to be involved.
+			It was converting its <abbr title="Teletypewriter Exchange">TWX</abbr> (<em>Teletypewriter Exchange</em>) network to dial service, and needed new teleprinters.
+			That was a chance to leave the 5-unit codes behind.
+		</p>
+		<p>
+			There was also coordination with Europe.
+			<strong>Hugh McGregor Ross</strong>, of Ferranti in the UK, worked on a British code through the <abbr title="British Standards Institution">BSI</abbr> (<em>British Standards Institution</em>), and on European and international codes.
+			In Ross's code, the alphabet started at the <em>second</em> position of its column — as in most British 5-track computer codes.
+			<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> took this layout — which is why <code>A</code> is <code>0x41</code> (rather than <code>0x40</code>).
+		</p>
+		<section>
+			<h1>Bob Bemer</h1>
+			<p>
+				<strong>Bob Bemer</strong>, of <abbr title="International Business Machines">IBM</abbr>, is sometimes called the “father of ASCII”.
+				He did make real contributions:
+			</p>
+			<ul>
+				<li>he was involved in getting the X3 committee started,</li>
+				<li>he co-authored a code proposal that X3.2 discussed in March 1961,</li>
+				<li>his 1961 letter proposed the backslash (<code>\</code>) and square brackets (<code>[</code> and <code>]</code>) that were adopted,</li>
+				<li>he promoted the idea of an <em>escape</em> character (<code>ESC</code>).</li>
+			</ul>
+			<p>
+				But, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was the work of a committee.
+				Bemer was not even on the list of X3.2 members printed in the 1963 standard (he was <abbr title="International Business Machines">IBM</abbr>'s <em>alternate</em> member).
+				And, Bemer himself wrote: “it is not correct to say that I created ASCII.”
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Design Decisions</h1>
+		<p>
+			Much of what makes <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> look the way it does was decided by X3.2 between 1960 and 1962.
+			And, unusually, the 1963 standard includes appendices that explain <em>why</em>.
+		</p>
+		<section>
+			<h1>7 Bits</h1>
+			<p>
+				The 1963 standard explains:
+			</p>
+			<blockquote>
+				<p>
+					A 7-bit set is the minimum size that will meet the requirements for graphics and control…
+					Both a 6-bit and an 8-bit set were considered and rejected — the 6-bit, providing only 64 graphics, could not accommodate essential format effectors, such as 'carriage return,' 'line feed,' 'horizontal tab,' etc; the 8-bit because it provides far more characters than are now needed in general applications.
+				</p>
+			</blockquote>
+			<p>
+				The committee also wanted a code with no <em>shifts</em> — one where each character “shall stand by itself and not depend on surrounding characters.”
+			</p>
+			<p>
+				(It is often said that 7 bits were chosen to leave an 8th bit for <em>parity</em>.
+				The standard does not give that reason.)
+			</p>
+		</section>
+		<section>
+			<h1>Control-Codes at the Ends</h1>
+			<p>
+				The all-zeros code (<code>0x00</code>) was reserved for <code>NUL</code>, and the all-ones code (<code>0x7F</code>) for <code>DEL</code>.
+				<code>DEL</code> is all-ones for the same reason as Murray's “erase” character:
+				on paper-tape, punching every hole over a character wipes it out.
+			</p>
+			<p>
+				So, the 64 printable (<em>graphic</em>) characters were put in the middle — <code>0x20</code> to <code>0x5F</code> — and most of the <em>control-codes</em> were put in the first 32 positions.
+			</p>
+		</section>
+		<section>
+			<h1>Space First</h1>
+			<p>
+				Space (<code>0x20</code>) is the first printable character so that it sorts before everything else.
+				The 1963 standard explains:
+			</p>
+			<blockquote>
+				<p>
+					This permits a name such as 'Johns' to collate ahead of… 'Johnson.'
+				</p>
+			</blockquote>
+			<p>
+				And, for the same reason, punctuation was put before the alphabet — so that “Johns, A” also sorts before “Johnson”.
+			</p>
+		</section>
+		<section>
+			<h1>Arabic-Numerals</h1>
+			<p>
+				The 1963 standard requires that:
+			</p>
+			<blockquote>
+				<p>
+					The numerals 0 through 9 shall be so coded that the four low-order bits shall be the binary-coded-decimal form of the particular numeral.
+				</p>
+			</blockquote>
+			<p>
+				This is why the <em>least-significant nibble</em> of each Arabic-numeral is its value.
+				(See <a href="../">ASCII</a> for the bit-tricks this allows.)
+			</p>
+		</section>
+		<section>
+			<h1>Keyboard Pairs</h1>
+			<p>
+				The 1963 standard also requires that characters which normally share a key on a typewriter differ in only one bit.
+				For example, <code>2</code> (<code>0x32</code>) and <code>"</code> (<code>0x22</code>) differ only in bit-4.
+			</p>
+			<p>
+				Later, when lower-case letters were added, the same idea made each upper-case letter differ from its lower-case letter in only one bit (bit-5).
+				But, that was <em>not</em> part of the 1963 standard — because the 1963 standard had no lower-case letters.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>ASCII 1963</h1>
+		<p>
+			X3.2's code was named “American Standard Code for Information Interchange” in November 1961.
+			Getting it approved took until 1963.
+			(<abbr title="International Business Machines">IBM</abbr>, among others, voted against it.)
+		</p>
+		<p>
+			The <abbr title="American Standards Association">ASA</abbr> approved <strong><abbr title="American Standards Association">ASA</abbr> X3.4-1963</strong> on June 17th, 1963.
+		</p>
+		<p>
+			<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> 1963 was quite different from the <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> used today:
+		</p>
+		<ul>
+			<li>it had <em>no lower-case letters</em> — <code>0x60</code> to <code>0x7B</code> were <em>unassigned</em> (reserved for future standardization),</li>
+			<li>it had <code>↑</code> (up-arrow) and <code>←</code> (left-arrow) where <code>^</code> and <code>_</code> are now,</li>
+			<li>it had no <code>`</code>, <code>{</code>, <code>|</code>, <code>}</code>, or <code>~</code>,</li>
+			<li><code>ACK</code> and <code>ESC</code> were near the end of the code (at <code>0x7C</code> and <code>0x7E</code>),</li>
+			<li>many of the <em>control-codes</em> had different names, or different meanings.</li>
+		</ul>
+		<p>
+			For example:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Hexadecimal</th>
+						<th>ASCII 1963</th>
+						<th>ASCII today</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>0x01</code></td>
+						<td><code>SOM</code> (start of message)</td>
+						<td><code>SOH</code> (start of heading)</td>
+					</tr>
+					<tr>
+						<td><code>0x05</code></td>
+						<td><code>WRU</code> (who are you?)</td>
+						<td><code>ENQ</code> (enquiry)</td>
+					</tr>
+					<tr>
+						<td><code>0x06</code></td>
+						<td><code>RU</code> (are you…?)</td>
+						<td><code>ACK</code> (acknowledge)</td>
+					</tr>
+					<tr>
+						<td><code>0x15</code></td>
+						<td><code>ERR</code> (error)</td>
+						<td><code>NAK</code> (negative acknowledge)</td>
+					</tr>
+					<tr>
+						<td><code>0x1B</code></td>
+						<td><code>S3</code> (separator 3)</td>
+						<td><code>ESC</code> (escape)</td>
+					</tr>
+					<tr>
+						<td><code>0x5E</code></td>
+						<td>↑ (up-arrow)</td>
+						<td>^ (circumflex accent)</td>
+					</tr>
+					<tr>
+						<td><code>0x5F</code></td>
+						<td>← (left-arrow)</td>
+						<td>_ (low line)</td>
+					</tr>
+					<tr>
+						<td><code>0x61</code></td>
+						<td><em>unassigned</em></td>
+						<td>a (small letter a)</td>
+					</tr>
+					<tr>
+						<td><code>0x7C</code></td>
+						<td><code>ACK</code> (acknowledge)</td>
+						<td>| (vertical line)</td>
+					</tr>
+					<tr>
+						<td><code>0x7E</code></td>
+						<td><code>ESC</code> (escape)</td>
+						<td>~ (tilde)</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			The first widespread commercial use of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was in <abbr title="American Telephone &amp; Telegraph">AT&amp;T</abbr>'s <abbr title="Teletypewriter Exchange">TWX</abbr> network, with Teletype's <strong>Model 33</strong> teleprinters.
+			The Model 33 printed only upper-case letters.
+		</p>
+	</section>
+	<section>
+		<h1>Revisions</h1>
+		<p>
+			<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was revised several times after 1963.
+			Along the way, the organization that published it was renamed twice:
+			the <abbr title="American Standards Association">ASA</abbr> became the <strong><abbr title="United States of America Standards Institute">USASI</abbr></strong> (<em>United States of America Standards Institute</em>) in 1966,
+			and the <abbr title="United States of America Standards Institute">USASI</abbr> became the <strong><abbr title="American National Standards Institute">ANSI</abbr></strong> (<em>American National Standards Institute</em>) in October 1969.
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Edition</th>
+						<th>Approved</th>
+						<th>Main Changes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><abbr title="American Standards Association">ASA</abbr> X3.4-1963</td>
+						<td>June 17th, 1963</td>
+						<td>first edition</td>
+					</tr>
+					<tr>
+						<td>X3.4-1965</td>
+						<td>December 1965</td>
+						<td>added lower-case letters, <code>^</code>, <code>_</code>, and more — approved, but <em>never published</em></td>
+					</tr>
+					<tr>
+						<td><abbr title="United States of America Standards Institute">USAS</abbr> X3.4-1967</td>
+						<td>July 7th, 1967</td>
+						<td>first published edition with lower-case letters, <code>`</code>, <code>{</code>, <code>|</code>, <code>}</code>, and <code>~</code> — essentially modern <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong></td>
+					</tr>
+					<tr>
+						<td><abbr title="United States of America Standards Institute">USAS</abbr> X3.4-1968</td>
+						<td>October 10th, 1968</td>
+						<td><code>LF</code> may mean “new line”, by agreement; names “ASCII” and “USASCII”</td>
+					</tr>
+					<tr>
+						<td><abbr title="American National Standards Institute">ANSI</abbr> X3.4-1977</td>
+						<td>June 9th, 1977</td>
+						<td>solid vertical line; removed some options (such as <code>£</code> in place of <code>#</code>)</td>
+					</tr>
+					<tr>
+						<td><abbr title="American National Standards Institute">ANSI</abbr> X3.4-1986</td>
+						<td>March 26th, 1986</td>
+						<td>rewritten to match <abbr title="International Organization for Standardization">ISO</abbr> 646 — no significant technical change</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			X3.4-1986 is still the current <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> standard.
+			It has been <em>reaffirmed</em> several times since (most recently in 2022), and is now named <strong><abbr title="InterNational Committee for Information Technology Standards">INCITS</abbr> 4-1986</strong>.
+		</p>
+		<section>
+			<h1>Lower-Case</h1>
+			<p>
+				Lower-case letters were left out of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> 1963 on purpose — there was disagreement over whether the last 2 columns of the code should be used for lower-case letters or for more <em>control-codes</em>.
+				But, the 1963 layout had been designed so that lower-case letters <em>could</em> go there.
+			</p>
+			<p>
+				In October 1963, the <abbr title="International Organization for Standardization">ISO</abbr> committee working on an international code voted to put lower-case letters in those columns.
+				<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> followed.
+				The lower-case letters were in the (unpublished) 1965 edition, and first published in the 1967 edition.
+			</p>
+		</section>
+		<section>
+			<h1>Diacritical Marks</h1>
+			<p>
+				The 1967 edition made <code>^</code> a <em>diacritical mark</em> (circumflex accent).
+				And, it allowed 5 other characters — <code>"</code>, <code>'</code>, <code>,</code>, <code>`</code>, and <code>~</code> — to also be used as diacritical marks.
+			</p>
+			<p>
+				The idea was that, on a printer, a letter could be <em>overstruck</em> by a diacritical mark using backspace.
+				I.e., “<code>e</code>, <code>BS</code>, <code>'</code>” would print “é”.
+			</p>
+			<p>
+				The 1986 edition <em>deprecated</em> this.
+			</p>
+		</section>
+		<section>
+			<h1>The Broken Bar</h1>
+			<p>
+				From 1967 to 1977, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>'s vertical line (<code>0x7C</code>) was drawn as a <em>broken</em> bar (<code>¦</code>).
+				This was a compromise with SHARE (an <abbr title="International Business Machines">IBM</abbr> users' group), who wanted a solid bar for the logical-OR operator.
+				The committee instead allowed the exclamation mark (<code>!</code>) to be drawn as a solid bar (for logical-OR) — and drew <code>0x7C</code> as a broken bar, so that the two would not be confused.
+			</p>
+			<p>
+				The 1977 edition restored the solid bar (<code>|</code>).
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>International Versions</h1>
+		<p>
+			<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> was developed alongside international versions, and they influenced each other.
+		</p>
+		<ul>
+			<li><strong><abbr title="European Computer Manufacturers Association">ECMA</abbr>-6</strong> — from the <em>European Computer Manufacturers Association</em> — first edition in 1965,</li>
+			<li><strong><abbr title="International Organization for Standardization">ISO</abbr>/R 646</strong> — an <abbr title="International Organization for Standardization">ISO</abbr> <em>Recommendation</em> — in 1967,</li>
+			<li><strong><abbr title="International Organization for Standardization">ISO</abbr> 646</strong> — the first International Standard version — in 1973,</li>
+			<li><strong>International Alphabet No. 5</strong> — from the <abbr title="International Telegraph and Telephone Consultative Committee">CCITT</abbr> — in 1968 (today's <abbr title="International Telecommunication Union">ITU</abbr>-T T.50).</li>
+		</ul>
+		<p>
+			These were not just <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> with a different name.
+			<abbr title="International Organization for Standardization">ISO</abbr> 646 reserved a number of positions for <em>national use</em> — so that each country could put its own letters and symbols there.
+			In <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, those positions hold characters such as <code>@</code>, <code>[</code>, <code>\</code>, <code>]</code>, <code>{</code>, <code>|</code>, <code>}</code>, and <code>~</code>.
+			For example:
+		</p>
+		<ul>
+			<li>the British version (BS 4730) has <code>£</code> in place of <code>#</code>,</li>
+			<li>the German version (DIN 66003) has <code>Ä</code>, <code>Ö</code>, <code>Ü</code>, <code>ä</code>, <code>ö</code>, <code>ü</code>, and <code>ß</code> in place of <code>[</code>, <code>\</code>, <code>]</code>, <code>{</code>, <code>|</code>, <code>}</code>, and <code>~</code>,</li>
+			<li>the Japanese version (JIS X 0201) has <code>¥</code> in place of <code>\</code>.</li>
+		</ul>
+		<p>
+			This meant that the same bytes could display differently in different countries.
+			For example, this C code:
+		</p>
+		<figure>
+			<pre>
+{*argv[1]='\0'}
+			</pre>
+		</figure>
+		<p>
+			would display, using the German version, as:
+		</p>
+		<figure>
+			<pre>
+ä*argvÄ1Ü='Ö0'ü
+			</pre>
+		</figure>
+		<p>
+			The international version also differed from <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> for a long time.
+			Its <em>International Reference Version</em> had <code>¤</code> (a generic currency sign) in place of <code>$</code>, and an overline in place of <code>~</code>.
+			Only in <abbr title="International Organization for Standardization">ISO</abbr>/<abbr title="International Electrotechnical Commission">IEC</abbr> 646:1991 did the <em>International Reference Version</em> become identical to <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+		</p>
+	</section>
+	<section>
+		<h1>Adoption</h1>
+		<section>
+			<h1>IBM and EBCDIC</h1>
+			<p>
+				On April 7th, 1964, <abbr title="International Business Machines">IBM</abbr> announced the <strong>System/360</strong> — one of the most important computer families ever made.
+				It did <em>not</em> use <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+				It used <abbr title="International Business Machines">IBM</abbr>'s own 8-bit code: <strong><abbr title="Extended Binary Coded Decimal Interchange Code">EBCDIC</abbr></strong> (<em>Extended Binary Coded Decimal Interchange Code</em>).
+			</p>
+			<p>
+				Bob Bemer later said that <abbr title="International Business Machines">IBM</abbr>'s printers and card-punches were not ready for <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> in time.
+				Others have said that <abbr title="International Business Machines">IBM</abbr>'s customers did not want to give up compatibility with their punched-card data.
+			</p>
+			<p>
+				(It is sometimes said that the System/360 had an “<strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> mode”.
+				It had a bit that changed only the codes produced by its <em>decimal-arithmetic</em> instructions — and it used an <abbr title="International Business Machines">IBM</abbr> 8-bit variant that did not match the final <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> standard.)
+			</p>
+			<p>
+				Because of System/360 and its successors, <abbr title="Extended Binary Coded Decimal Interchange Code">EBCDIC</abbr> is still used on <abbr title="International Business Machines">IBM</abbr> mainframes today.
+			</p>
+		</section>
+		<section>
+			<h1>Teleprinters and Minicomputers</h1>
+			<p>
+				Meanwhile, the Teletype Model 33 was cheap, and became very common.
+				Minicomputer makers (such as <abbr title="Digital Equipment Corporation">DEC</abbr>, with its <abbr title="Programmed Data Processor">PDP</abbr> computers) used it as a console and paper-tape device.
+				And, time-sharing systems used it as a terminal.
+				So, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> spread with it.
+			</p>
+		</section>
+		<section>
+			<h1>The US Government</h1>
+			<p>
+				On March 11th, 1968, US President <strong>Lyndon B. Johnson</strong> signed a memorandum approving <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> as a <em>Federal standard</em>:
+			</p>
+			<blockquote>
+				<p>
+					All computers and related equipment configurations brought into the Federal Government inventory on and after July 1, 1969, must have the capability to use the Standard Code for Information Interchange…
+				</p>
+			</blockquote>
+			<p>
+				This became <strong><abbr title="Federal Information Processing Standards">FIPS</abbr> PUB 1</strong> — the very first <em>Federal Information Processing Standard</em> — on November 1st, 1968.
+			</p>
+			<p>
+				Note that this required <em>capability</em> to use <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> — not that <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> be used for everything.
+				Still, the US government was a very large buyer of computers.
+				A later <abbr title="National Institute of Standards and Technology">NIST</abbr> history calls federal endorsement “the single most important reason for the subsequent wide adoption of ASCII.”
+			</p>
+		</section>
+		<section>
+			<h1>The Internet</h1>
+			<p>
+				On October 16th, 1969, <strong>Vint Cerf</strong> wrote <strong><abbr title="Request for Comments">RFC</abbr> 20</strong>, “ASCII format for Network Interchange”, for the <abbr title="Advanced Research Projects Agency Network">ARPANET</abbr> (a predecessor of the Internet):
+			</p>
+			<blockquote>
+				<p>
+					For concreteness, we suggest the use of standard 7-bit ASCII embedded in an 8 bit byte whose high order bit is always 0.
+				</p>
+			</blockquote>
+			<p>
+				Many later Internet protocols were built on <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+				For example, Telnet (<abbr title="Request for Comments">RFC</abbr> 854) uses “seven-bit USASCII in an eight-bit field”, and the original email protocol <abbr title="Simple Mail Transfer Protocol">SMTP</abbr> (<abbr title="Request for Comments">RFC</abbr> 821) carried only 7-bit <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+				And, in email (<abbr title="Multipurpose Internet Mail Extensions">MIME</abbr>), text with no stated character-set is assumed to be <code>US-ASCII</code>.
+			</p>
+			<p>
+				In 2015, <abbr title="Request for Comments">RFC</abbr> 20 was made an official Internet Standard (<abbr title="Standard">STD</abbr> 80).
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Beyond 7 Bits</h1>
+		<p>
+			As 8-bit bytes became normal, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>'s 7 bits left 128 more codes unused.
+			Many <strong>character-sets</strong> filled them in — each keeping <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> as its first 128 characters.
+		</p>
+		<ul>
+			<li>
+				The <strong><abbr title="International Business Machines">IBM</abbr> PC</strong> (announced August 12th, 1981) used <strong><abbr title="code page 437">CP437</abbr></strong> (code page 437), which added box-drawing characters, accented letters, Greek letters, and more.
+				One of its designers, David Bradley, said: “The IBM PC used the ASCII character set, a radical change for an IBM product.”
+			</li>
+			<li>
+				Commodore's <strong>PETSCII</strong> (from 1977) was based on <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> 1963 — which is why it has <code>↑</code> and <code>←</code> where <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> today has <code>^</code> and <code>_</code>.
+			</li>
+			<li>
+				<strong><abbr title="International Organization for Standardization">ISO</abbr> 8859-1</strong> (<em>Latin-1</em>, 1987) added letters for Western European languages.
+			</li>
+		</ul>
+		<p>
+			These are sometimes called “extended ASCII”.
+			But, there is no standard named “extended ASCII” — <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> itself only ever had 128 characters.
+		</p>
+		<section>
+			<h1>Unicode and UTF-8</h1>
+			<p>
+				<strong>Unicode</strong> 1.0 was published in October 1991.
+				Its first 128 characters (<code>U+0000</code> to <code>U+007F</code>) are <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+			</p>
+			<p>
+				In September 1992, <strong>Ken Thompson</strong> designed <strong><abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr></strong>, with <strong>Rob Pike</strong>, at Bell Labs.
+				Pike later wrote:
+			</p>
+			<blockquote>
+				<p>
+					UTF-8 was designed, in front of my eyes, on a placemat in a New Jersey diner one night in September or so 1992.
+				</p>
+			</blockquote>
+			<p>
+				A key property of <abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr> is that <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> characters are encoded as the exact same single bytes as in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+				As <abbr title="Request for Comments">RFC</abbr> 3629 puts it:
+			</p>
+			<blockquote>
+				<p>
+					A direct consequence is that a plain ASCII string is also a valid UTF-8 string.
+				</p>
+			</blockquote>
+			<p>
+				And, the bytes <code>0x00</code> to <code>0x7F</code> never appear inside the encoding of any other character.
+				So, software (and protocols) built for <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> often work with <abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr> without changes.
+			</p>
+		</section>
+		<section>
+			<h1>The Web</h1>
+			<p>
+				In December 2007, Google found that Unicode had overtaken <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> as the most frequent encoding on the web pages it indexed.
+				(Google counted a page as “ASCII” if it contained only <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> characters.)
+			</p>
+			<p>
+				As of November 2026, W3Techs reports that 99.1% of websites use <abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr>, and less than 0.1% declare <code>US-ASCII</code>.
+			</p>
+			<p>
+				But, because <abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr> contains <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, every one of those websites is still — in part — <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Timeline</h1>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Year</th>
+						<th>Event</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1870s</td>
+						<td>Émile Baudot's 5-unit printing-telegraph code</td>
+					</tr>
+					<tr>
+						<td>c. 1900</td>
+						<td>Donald Murray's 5-unit paper-tape code</td>
+					</tr>
+					<tr>
+						<td>1931</td>
+						<td><abbr title="International Telegraph Alphabet No. 2">ITA2</abbr> standardized, based on Murray's code</td>
+					</tr>
+					<tr>
+						<td>1960</td>
+						<td><abbr title="American Standards Association">ASA</abbr> committee X3 formed; subcommittee X3.2 first meets (October 6th)</td>
+					</tr>
+					<tr>
+						<td>1963</td>
+						<td><abbr title="American Standards Association">ASA</abbr> X3.4-1963 approved (June 17th) — no lower-case letters</td>
+					</tr>
+					<tr>
+						<td>1964</td>
+						<td><abbr title="International Business Machines">IBM</abbr> System/360 announced, using <abbr title="Extended Binary Coded Decimal Interchange Code">EBCDIC</abbr></td>
+					</tr>
+					<tr>
+						<td>1965</td>
+						<td>X3.4-1965 approved but never published; <abbr title="European Computer Manufacturers Association">ECMA</abbr>-6 first edition</td>
+					</tr>
+					<tr>
+						<td>1967</td>
+						<td><abbr title="United States of America Standards Institute">USAS</abbr> X3.4-1967 — lower-case letters; <abbr title="International Organization for Standardization">ISO</abbr>/R 646</td>
+					</tr>
+					<tr>
+						<td>1968</td>
+						<td><abbr title="United States of America Standards Institute">USAS</abbr> X3.4-1968; President Johnson's memorandum; <abbr title="Federal Information Processing Standards">FIPS</abbr> PUB 1</td>
+					</tr>
+					<tr>
+						<td>1969</td>
+						<td><abbr title="Request for Comments">RFC</abbr> 20 — <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> for the <abbr title="Advanced Research Projects Agency Network">ARPANET</abbr></td>
+					</tr>
+					<tr>
+						<td>1973</td>
+						<td><abbr title="International Organization for Standardization">ISO</abbr> 646 (first International Standard edition)</td>
+					</tr>
+					<tr>
+						<td>1977</td>
+						<td><abbr title="American National Standards Institute">ANSI</abbr> X3.4-1977</td>
+					</tr>
+					<tr>
+						<td>1981</td>
+						<td><abbr title="International Business Machines">IBM</abbr> PC, with <abbr title="code page 437">CP437</abbr></td>
+					</tr>
+					<tr>
+						<td>1986</td>
+						<td><abbr title="American National Standards Institute">ANSI</abbr> X3.4-1986 — the current edition</td>
+					</tr>
+					<tr>
+						<td>1987</td>
+						<td><abbr title="International Organization for Standardization">ISO</abbr> 8859-1 (Latin-1)</td>
+					</tr>
+					<tr>
+						<td>1991</td>
+						<td>Unicode 1.0; <abbr title="International Organization for Standardization">ISO</abbr>/<abbr title="International Electrotechnical Commission">IEC</abbr> 646:1991 makes the international reference version identical to <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong></td>
+					</tr>
+					<tr>
+						<td>1992</td>
+						<td><abbr title="Unicode Transformation Format — 8-bit">UTF-8</abbr> designed</td>
+					</tr>
+					<tr>
+						<td>2007</td>
+						<td>Unicode overtakes <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> on the web</td>
+					</tr>
+					<tr>
+						<td>2015</td>
+						<td><abbr title="Request for Comments">RFC</abbr> 20 becomes Internet Standard <abbr title="Standard">STD</abbr> 80</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+	</section>
+	<section>
+		<h1>Sources</h1>
+		<ul>
+			<li><a href="https://archive.org/details/enf-ascii-1963-06">American Standard Code for Information Interchange, X3.4-1963</a> (scan of the 1963 standard)</li>
+			<li><a href="https://archive.org/details/enf-ascii">Eric Fischer, “The Evolution of Character Codes, 1874-1968”</a></li>
+			<li><a href="https://archive.org/details/coded-character-sets">Charles E. Mackenzie, “Coded Character Sets: History and Development” (1980)</a></li>
+			<li><a href="https://ethw.org/Milestones:American_Standard_Code_for_Information_Interchange_ASCII,_1963">IEEE Milestone: American Standard Code for Information Interchange (ASCII), 1963</a></li>
+			<li><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub1-2-1977.pdf">FIPS PUB 1-2 (includes ANSI X3.4-1977)</a></li>
+			<li><a href="https://ecma-international.org/publications-and-standards/standards/ecma-6/">ECMA-6: 7-bit coded character set</a></li>
+			<li><a href="https://www.presidency.ucsb.edu/documents/memorandum-approving-the-adoption-the-federal-government-standard-code-for-information">Lyndon B. Johnson, Memorandum Approving the Adoption by the Federal Government of a Standard Code for Information Interchange (1968)</a></li>
+			<li><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/FIPS/fipspub1.pdf">FIPS PUB 1 (1968)</a></li>
+			<li><a href="https://nvlpubs.nist.gov/nistpubs/sp958-lide/html/172-173.html">NIST SP 958: ASCII as a Federal Standard</a></li>
+			<li><a href="https://www.rfc-editor.org/rfc/rfc20">RFC 20: ASCII format for Network Interchange</a></li>
+			<li><a href="https://www.rfc-editor.org/rfc/rfc854">RFC 854: Telnet Protocol Specification</a></li>
+			<li><a href="https://www.rfc-editor.org/rfc/rfc821">RFC 821: Simple Mail Transfer Protocol</a></li>
+			<li><a href="https://www.rfc-editor.org/rfc/rfc2046">RFC 2046: MIME Part Two: Media Types</a></li>
+			<li><a href="https://www.rfc-editor.org/rfc/rfc3629">RFC 3629: UTF-8, a transformation format of ISO 10646</a></li>
+			<li><a href="https://www.cl.cam.ac.uk/~mgk25/ucs/utf-8-history.txt">Rob Pike, history of UTF-8 (2003)</a></li>
+			<li><a href="https://www.vintagecomputing.com/?p=790">David Bradley on code page 437</a></li>
+			<li><a href="https://googleblog.blogspot.com/2008/05/moving-to-unicode-51.html">Google: Moving to Unicode 5.1 (2008)</a></li>
+			<li><a href="https://w3techs.com/technologies/overview/character_encoding">W3Techs: Usage statistics of character encodings for websites</a></li>
+		</ul>
+	</section>
+	<footer>
+		<include src="../author.html" />
+		<include src="../license.html" />
+	</footer>
+</article>
+</main>
+</body>
+</html>
