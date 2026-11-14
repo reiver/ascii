@@ -1924,6 +1924,15 @@
 			And, to compare two letters in a case-insensitive manner, lower-case both of them, and then compare them.
 		</p>
 		<p>
+			Note that these bit-tricks only work on <em>letters</em>.
+			Used on other characters, they can turn one character into a different, unrelated character.
+			For example, “@” (<code>0x40</code>) bitwise-OR <code>0x20</code> gives “`” (<code>0x60</code>), and “[” (<code>0x5B</code>) bitwise-OR <code>0x20</code> gives “{” (<code>0x7B</code>).
+			That also means that a case-insensitive comparison done this way would say that “@” and “`” are equal.
+		</p>
+		<p>
+			So, you would need to check that a character is a letter (<code>A</code> to <code>Z</code>, or <code>a</code> to <code>z</code>) before using these bit-tricks on it.
+		</p>
+		<p>
 			In summary:
 		</p>
 		<figure>
@@ -2187,6 +2196,14 @@ func main() {
 		</figure>
 		<p>
 			(See the “Upper-Case versus Lower-Case” section for what bitwise-AND and bitwise-OR do.)
+		</p>
+		<p>
+			Note that these bit-tricks only work on <em>Arabic-numerals</em>, and on the numbers 0 to 9.
+			Bitwise-AND with <code>0x0F</code> gives a value for <em>any</em> character — for example, “G” (<code>0x47</code>) bitwise-AND <code>0x0F</code> gives 7.
+			And, bitwise-OR with <code>0x30</code> only gives an Arabic-numeral for the numbers 0 to 9 — for example, 10 (<code>0x0A</code>) bitwise-OR <code>0x30</code> gives “:” (<code>0x3A</code>).
+		</p>
+		<p>
+			So, you would need to check that a character is an Arabic-numeral (<code>0x30</code> to <code>0x39</code>), or that a number is from 0 to 9, before using these bit-tricks on it.
 		</p>
 		<p>
 			In summary:
