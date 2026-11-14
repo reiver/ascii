@@ -1,0 +1,3295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" vocab="https://schema.org/" typeof="TechArticle" class="article">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="/text-readability/readmode.css" />
+<title>PETSCII</title>
+<meta name="author" content="Charles Iliya Krempeaux" />
+<meta name="category" content="american standard code for information interchange" />
+<meta name="category" content="ascii" />
+<meta name="category" content="petscii" />
+</head>
+<body>
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+	<ol>
+		<li><a href="/">Home</a></li>
+		<li><a href="../">ASCII</a></li>
+		<li><a href="./" aria-current="page">PETSCII</a></li>
+	</ol>
+</nav>
+
+<main>
+<article>
+	<header>
+		<hgroup>
+			<h1 property="headline">PETSCII</h1>
+			<p>
+				the character-set of Commodore's 8-bit computers
+			</p>
+		</hgroup>
+		<p>
+			by <a href="https://reiver.link/">Charles Iliya Krempeaux</a>
+		</p>
+	</header>
+	<p>
+		<strong>PETSCII</strong> is the name commonly given to the <strong>character-set</strong> used by Commodore's 8-bit home computers —
+		the <strong><abbr title="Personal Electronic Transactor">PET</abbr></strong> (1977),
+		the <strong>VIC-20</strong>,
+		the <strong>Commodore 64</strong>,
+		the <strong>Commodore 16</strong> and <strong>Plus/4</strong>,
+		and the <strong>Commodore 128</strong>.
+	</p>
+	<p>
+		PETSCII is based on <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> — but on the <em>1963</em> version of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, not the version used today.
+		And, PETSCII adds a large number of <em>graphics-characters</em> (lines, corners, blocks, card suits, and more) that can be typed straight from the keyboard and used to draw pictures.
+	</p>
+	<p>
+		Although PETSCII looks a lot like <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, it is not compatible with any version of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+		Its <em>control-codes</em> are almost all different.
+		And, in one of its two modes, its upper-case and lower-case letters are swapped compared to <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+	</p>
+	<p>
+		(The name “PETSCII” does not seem to come from Commodore.
+		Commodore's own manuals called it “ASCII”, “Commodore ASCII”, “CBM ASCII”, or “PET ASCII”.
+		“PETSCII” may have been a contraction of “PET ASCII”, but who first used it, and when, does not seem to be documented.)
+	</p>
+	<section>
+		<h1>Origins</h1>
+		<p>
+			The <strong>Commodore <abbr title="Personal Electronic Transactor">PET</abbr> 2001</strong> was designed by a team led by <strong>Chuck Peddle</strong>.
+			It was previewed at the Consumer Electronics Show in January 1977, and the first 100 units shipped in mid-October 1977.
+		</p>
+		<p>
+			Its character-set was designed by <strong>Leonard Tramiel</strong> (son of Commodore's founder, Jack Tramiel), working to Peddle's requirements.
+			Tramiel later wrote, about Peddle:
+		</p>
+		<blockquote>
+			<p>
+				He gave me the task of designing that character set.
+			</p>
+		</blockquote>
+		<p>
+			The one firm requirement was the four card suits — <code>♠</code>, <code>♥</code>, <code>♦</code>, and <code>♣</code> — because card games, such as Blackjack, were expected to be popular on the machine.
+		</p>
+		<p>
+			Tramiel also included every possible 2×2 pattern of quarter-blocks (only 8 characters are needed, since <em>reverse-video</em> provides the other 8).
+			With these, the <abbr title="Personal Electronic Transactor">PET</abbr>'s 40×25 text screen could be used as an 80×50 <em>pseudo-graphics</em> screen.
+			(See “Pseudo-Graphics”, below.)
+		</p>
+		<p>
+			The graphics-characters were arranged so that each one is typed by holding <em>shift</em> and pressing a normal key.
+			An early review of the <abbr title="Personal Electronic Transactor">PET</abbr>, in <cite>BYTE</cite> magazine (March 1978), said that the <abbr title="Personal Electronic Transactor">PET</abbr> was:
+		</p>
+		<blockquote>
+			<p>
+				better adapted for drawing pictures of this sort than for plotting mathematical functions.
+			</p>
+		</blockquote>
+		<p>
+			(Tramiel also remembers including a <code>£</code> (pound sign).
+			But, the <abbr title="Personal Electronic Transactor">PET</abbr>'s character <abbr title="read-only memory">ROM</abbr>s have <code>\</code> (backslash) in that position.
+			The <code>£</code> first appeared with the VIC-20.)
+		</p>
+	</section>
+	<section>
+		<h1>Based on ASCII 1963</h1>
+		<p>
+			PETSCII follows the 1963 version of <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> — which had <code>↑</code> (up-arrow) and <code>←</code> (left-arrow) where <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> today has <code>^</code> and <code>_</code>.
+			(See the <a href="../history/">history of ASCII</a>.)
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Hexadecimal</th>
+						<th>ASCII 1963</th>
+						<th>ASCII today</th>
+						<th>PET</th>
+						<th>VIC-20, Commodore 64, and later</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>0x5C</code></td>
+						<td><code>\</code></td>
+						<td><code>\</code></td>
+						<td><code>\</code></td>
+						<td><code>£</code></td>
+					</tr>
+					<tr>
+						<td><code>0x5D</code></td>
+						<td><code>]</code></td>
+						<td><code>]</code></td>
+						<td><code>]</code></td>
+						<td><code>]</code></td>
+					</tr>
+					<tr>
+						<td><code>0x5E</code></td>
+						<td><code>↑</code></td>
+						<td><code>^</code></td>
+						<td><code>↑</code></td>
+						<td><code>↑</code></td>
+					</tr>
+					<tr>
+						<td><code>0x5F</code></td>
+						<td><code>←</code></td>
+						<td><code>_</code></td>
+						<td><code>←</code></td>
+						<td><code>←</code></td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Why the 1963 version, and not the 1967 version?
+			That does not seem to be documented.
+		</p>
+		<p>
+			Codes <code>0x20</code> to <code>0x5B</code>, and <code>0x5D</code>, are the same as <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> — space, punctuation, Arabic-numerals, <code>@</code>, the letters <code>A</code> to <code>Z</code> (in the default mode), <code>[</code>, and <code>]</code>.
+			But, PETSCII has no <code>`</code>, <code>{</code>, <code>|</code>, <code>}</code>, or <code>~</code> anywhere.
+		</p>
+	</section>
+	<section>
+		<h1>Two Modes</h1>
+		<p>
+			PETSCII has two modes, each with its own set of characters:
+		</p>
+		<ul>
+			<li><strong>upper-case / graphics</strong> mode (the default) — upper-case letters, plus the full set of graphics-characters,</li>
+			<li><strong>lower-case / upper-case</strong> mode (sometimes called <em>text</em> or <em>business</em> mode) — lower-case letters, upper-case letters, and fewer graphics-characters.</li>
+		</ul>
+		<p>
+			Switching modes does not change any of the codes.
+			It changes how the codes are <em>displayed</em>.
+		</p>
+		<p>
+			And, in lower-case / upper-case mode, PETSCII puts the letters in very different places from <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Code</th>
+						<th>ASCII</th>
+						<th>PETSCII (upper-case / graphics)</th>
+						<th>PETSCII (lower-case / upper-case)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>0x41</code> to <code>0x5A</code></td>
+						<td><code>A</code> to <code>Z</code></td>
+						<td><code>A</code> to <code>Z</code></td>
+						<td><code>a</code> to <code>z</code></td>
+					</tr>
+					<tr>
+						<td><code>0x61</code> to <code>0x7A</code></td>
+						<td><code>a</code> to <code>z</code></td>
+						<td>graphics</td>
+						<td><code>A</code> to <code>Z</code></td>
+					</tr>
+					<tr>
+						<td><code>0xC1</code> to <code>0xDA</code></td>
+						<td><em>(not ASCII)</em></td>
+						<td>graphics</td>
+						<td><code>A</code> to <code>Z</code></td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			(On the VIC-20 and Commodore 64, <code>0x61</code> to <code>0x7A</code> display the same characters as <code>0xC1</code> to <code>0xDA</code> — on the <abbr title="Personal Electronic Transactor">PET</abbr>, they repeat <code>0x21</code> to <code>0x3A</code> instead.
+			And, <code>0xC1</code> to <code>0xDA</code> are the codes the keyboard actually produces.)
+		</p>
+		<p>
+			So, in lower-case / upper-case mode, <code>A</code> (<code>0xC1</code>) and <code>a</code> (<code>0x41</code>) differ in bit-7 — rather than bit-5, as in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>:
+		</p>
+		<figure>
+			<pre>
+    ⚑
+    ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (PETSCII “A”, in lower-case / upper-case mode)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+    ↑       ↑       ↑       ↑       ↑       ↑       ↑       ↑
+  bit 7   bit 6   bit 5   bit 4   bit 3   bit 2   bit 1   bit 0
+    ↓       ↓       ↓       ↓       ↓       ↓       ↓       ↓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (PETSCII “a”, in lower-case / upper-case mode)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+    ⇑
+    ⚑
+			</pre>
+		</figure>
+		<p>
+			(Compare this to <a href="../">ASCII</a>, where upper-case and lower-case letters differ in bit-5.)
+		</p>
+		<section>
+			<h1>Switching Modes</h1>
+			<p>
+				On the Commodore 64, the mode can be switched by:
+			</p>
+			<ul>
+				<li>pressing <em>shift</em> and the <em>Commodore</em> key together,</li>
+				<li>printing <code>CHR$(14)</code> (lower-case / upper-case) or <code>CHR$(142)</code> (upper-case / graphics),</li>
+				<li>or, <code>POKE 53272,23</code> (lower-case / upper-case) or <code>POKE 53272,21</code> (upper-case / graphics).</li>
+			</ul>
+			<p>
+				And, printing <code>CHR$(8)</code> disables switching with <em>shift</em> and <em>Commodore</em>, and <code>CHR$(9)</code> enables it again.
+			</p>
+			<p>
+				On the original <abbr title="Personal Electronic Transactor">PET</abbr>, the only way to switch was <code>POKE 59468,14</code> (lower-case / upper-case) or <code>POKE 59468,12</code> (upper-case / graphics).
+			</p>
+		</section>
+		<section>
+			<h1>The Original PET</h1>
+			<p>
+				On the original <abbr title="Personal Electronic Transactor">PET</abbr> 2001, lower-case mode worked the other way around.
+				Unshifted keys gave <em>upper-case</em> letters, and shifted keys gave <em>lower-case</em> letters.
+				As <cite>BYTE</cite> magazine put it (March 1978):
+			</p>
+			<blockquote>
+				<p>
+					(Yes, you must press the shift key to get lower case, and omit the shift key to get upper case!)
+				</p>
+			</blockquote>
+			<p>
+				Later <abbr title="Personal Electronic Transactor">PET</abbr>s swapped this.
+				But, the PETSCII codes did not change — the character <abbr title="read-only memory">ROM</abbr> did.
+				The upper-case and lower-case pictures were swapped in the <abbr title="read-only memory">ROM</abbr>.
+				So, text written on an original <abbr title="Personal Electronic Transactor">PET</abbr> shows up with its case reversed on a later one.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Control-Codes</h1>
+		<p>
+			On the <abbr title="Personal Electronic Transactor">PET</abbr> 2001, VIC-20, and Commodore 64, only one PETSCII <em>control-code</em> means the same thing as in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>: <code>RETURN</code> (<code>0x0D</code>, which is <code>CR</code> in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>).
+			The rest are Commodore's own — mostly for moving the cursor, editing the screen, and (on the VIC-20 and Commodore 64) changing color.
+			(Later <abbr title="Personal Electronic Transactor">PET</abbr>s, and the Commodore 128, added a few more that match <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> — such as bell (<code>0x07</code>), tab (<code>0x09</code>), and <code>ESC</code> (<code>0x1B</code>).)
+		</p>
+		<p>
+			Many of them come in pairs, where the code of the second is the code of the first plus <code>0x80</code> (i.e., with bit-7 set) — often typed by the same key, with <em>shift</em>:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Decimal</th>
+						<th>Hexadecimal</th>
+						<th>Control-Code</th>
+						<th>Paired Decimal</th>
+						<th>Paired Hexadecimal</th>
+						<th>Paired Control-Code</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>13</td>
+						<td><code>0x0D</code></td>
+						<td>RETURN</td>
+						<td>141</td>
+						<td><code>0x8D</code></td>
+						<td>shifted RETURN</td>
+					</tr>
+					<tr>
+						<td>17</td>
+						<td><code>0x11</code></td>
+						<td>cursor down</td>
+						<td>145</td>
+						<td><code>0x91</code></td>
+						<td>cursor up</td>
+					</tr>
+					<tr>
+						<td>29</td>
+						<td><code>0x1D</code></td>
+						<td>cursor right</td>
+						<td>157</td>
+						<td><code>0x9D</code></td>
+						<td>cursor left</td>
+					</tr>
+					<tr>
+						<td>19</td>
+						<td><code>0x13</code></td>
+						<td>HOME</td>
+						<td>147</td>
+						<td><code>0x93</code></td>
+						<td>CLR (clear screen)</td>
+					</tr>
+					<tr>
+						<td>18</td>
+						<td><code>0x12</code></td>
+						<td>RVS ON (reverse-video on)</td>
+						<td>146</td>
+						<td><code>0x92</code></td>
+						<td>RVS OFF (reverse-video off)</td>
+					</tr>
+					<tr>
+						<td>20</td>
+						<td><code>0x14</code></td>
+						<td>DEL (delete)</td>
+						<td>148</td>
+						<td><code>0x94</code></td>
+						<td>INST (insert)</td>
+					</tr>
+					<tr>
+						<td>14</td>
+						<td><code>0x0E</code></td>
+						<td>lower-case / upper-case mode</td>
+						<td>142</td>
+						<td><code>0x8E</code></td>
+						<td>upper-case / graphics mode</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Notice that some of these clash with <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+			For example, in <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, <code>0x11</code> and <code>0x13</code> are <code>DC1</code> and <code>DC3</code> — which are often used as <code>XON</code> and <code>XOFF</code> (to start and stop the flow of data).
+			In PETSCII, they are <em>cursor down</em> and <em>HOME</em>.
+			And, PETSCII's delete is <code>0x14</code> — while <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>'s backspace is <code>0x08</code>.
+		</p>
+		<section>
+			<h1>Colors</h1>
+			<p>
+				The VIC-20 and Commodore 64 added control-codes for changing the color of the text:
+			</p>
+			<figure>
+				<table>
+					<thead>
+						<tr>
+							<th>Decimal</th>
+							<th>Hexadecimal</th>
+							<th>Color</th>
+							<th>Machines</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>144</td>
+							<td><code>0x90</code></td>
+							<td>black</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td><code>0x05</code></td>
+							<td>white</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>28</td>
+							<td><code>0x1C</code></td>
+							<td>red</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>159</td>
+							<td><code>0x9F</code></td>
+							<td>cyan</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>156</td>
+							<td><code>0x9C</code></td>
+							<td>purple</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>30</td>
+							<td><code>0x1E</code></td>
+							<td>green</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>31</td>
+							<td><code>0x1F</code></td>
+							<td>blue</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>158</td>
+							<td><code>0x9E</code></td>
+							<td>yellow</td>
+							<td>VIC-20, Commodore 64</td>
+						</tr>
+						<tr>
+							<td>129</td>
+							<td><code>0x81</code></td>
+							<td>orange</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>149</td>
+							<td><code>0x95</code></td>
+							<td>brown</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>150</td>
+							<td><code>0x96</code></td>
+							<td>light red</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>151</td>
+							<td><code>0x97</code></td>
+							<td>grey 1</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>152</td>
+							<td><code>0x98</code></td>
+							<td>grey 2</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>153</td>
+							<td><code>0x99</code></td>
+							<td>light green</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>154</td>
+							<td><code>0x9A</code></td>
+							<td>light blue</td>
+							<td>Commodore 64</td>
+						</tr>
+						<tr>
+							<td>155</td>
+							<td><code>0x9B</code></td>
+							<td>grey 3</td>
+							<td>Commodore 64</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
+		</section>
+		<section>
+			<h1>Control-Codes in Strings</h1>
+			<p>
+				In Commodore <abbr title="Beginner's All-purpose Symbolic Instruction Code">BASIC</abbr>, control-codes could be typed directly into a string, inside quotes.
+				They would show up on the screen as <em>reverse-video</em> symbols — and then take effect when the string was printed.
+				That is how many Commodore programs move the cursor and change colors.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Graphics-Characters</h1>
+		<p>
+			In upper-case / graphics mode, codes <code>0xA0</code> to <code>0xBF</code> and <code>0xC0</code> to <code>0xDF</code> are graphics-characters.
+			These include:
+		</p>
+		<ul>
+			<li>horizontal, vertical, and diagonal lines,</li>
+			<li>corners, rounded corners, and line junctions — for drawing boxes,</li>
+			<li>half-blocks, quarter-blocks, and one-eighth blocks,</li>
+			<li>a checkerboard pattern,</li>
+			<li>triangles,</li>
+			<li>the card suits — <code>♠</code> (<code>0xC1</code>), <code>♥</code> (<code>0xD3</code>), <code>♣</code> (<code>0xD8</code>), and <code>♦</code> (<code>0xDA</code>),</li>
+			<li>a filled circle <code>●</code> (<code>0xD1</code>) and an empty circle <code>○</code> (<code>0xD7</code>),</li>
+			<li>and <code>π</code> (<code>0xDE</code>, and also <code>0xFF</code> — and, on the VIC-20 and Commodore 64, <code>0x7E</code>).</li>
+		</ul>
+		<p>
+			In lower-case / upper-case mode, the codes <code>0xC1</code> to <code>0xDA</code> become the upper-case letters — so the card suits (among others) are not available in that mode.
+			Tramiel later wrote that he wished he had planned for lower-case earlier:
+		</p>
+		<blockquote>
+			<p>
+				In particular I wish the card suits were still there with the lower case characters.
+			</p>
+		</blockquote>
+		<section>
+			<h1>Duplicate Codes</h1>
+			<p>
+				Some PETSCII codes display the same character as other codes.
+				The <cite>Commodore 64 Programmer's Reference Guide</cite> lists these:
+			</p>
+			<blockquote>
+				<p>
+					CODES 192-223 SAME AS 96-127
+					<br />
+					CODES 224-254 SAME AS 160-190
+					<br />
+					CODE 255 SAME AS 126
+				</p>
+			</blockquote>
+			<p>
+				But, the <abbr title="Personal Electronic Transactor">PET</abbr> was different.
+				On the <abbr title="Personal Electronic Transactor">PET</abbr>, codes <code>0x60</code> to <code>0x7F</code> repeat codes <code>0x20</code> to <code>0x3F</code> instead.
+				So, for example, on a <abbr title="Personal Electronic Transactor">PET</abbr> <code>CHR$(108)</code> prints a comma.
+			</p>
+		</section>
+		<section>
+			<h1>The Commodore 64 Font</h1>
+			<p>
+				The Commodore 64 kept the same characters as the VIC-20, but made their lines thicker — so that every vertical line is at least 2 pixels wide.
+				This avoided color errors on television screens.
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Pseudo-Graphics</h1>
+		<p>
+			PETSCII includes characters that split a character cell into 4 quarters — 2×2 “pixels”.
+			So, with these, the <abbr title="Personal Electronic Transactor">PET</abbr>'s 40×25 text screen can be used as an 80×50 <em>pseudo-graphics</em> screen.
+		</p>
+		<p>
+			For example, this character has its upper-left and lower-right quarters filled:
+		</p>
+		<figure>
+			<pre>
+┌───────┬───────┐
+│   1   │   0   │
+├───────┼───────┤
+│   0   │   1   │
+└───────┴───────┘ = ▚ (PETSCII 0xBF, Unicode U+259A)
+			</pre>
+		</figure>
+		<p>
+			There are 16 possible patterns of 4 quarters.
+			But, PETSCII only needs 8 of them as characters — because <em>reverse-video</em> turns each of those 8 into one of the other 8.
+			All 16 are in Unicode (in the <strong>Block Elements</strong> block).
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Character</th>
+						<th>PETSCII</th>
+						<th>Unicode</th>
+						<th>Reverse-Video</th>
+						<th>Unicode</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><em>(space)</em></td>
+						<td><code>0x20</code></td>
+						<td><code>U+0020</code></td>
+						<td>█</td>
+						<td><code>U+2588</code></td>
+					</tr>
+					<tr>
+						<td>▘</td>
+						<td><code>0xBE</code></td>
+						<td><code>U+2598</code></td>
+						<td>▟</td>
+						<td><code>U+259F</code></td>
+					</tr>
+					<tr>
+						<td>▝</td>
+						<td><code>0xBC</code></td>
+						<td><code>U+259D</code></td>
+						<td>▙</td>
+						<td><code>U+2599</code></td>
+					</tr>
+					<tr>
+						<td>▖</td>
+						<td><code>0xBB</code></td>
+						<td><code>U+2596</code></td>
+						<td>▜</td>
+						<td><code>U+259C</code></td>
+					</tr>
+					<tr>
+						<td>▗</td>
+						<td><code>0xAC</code></td>
+						<td><code>U+2597</code></td>
+						<td>▛</td>
+						<td><code>U+259B</code></td>
+					</tr>
+					<tr>
+						<td>▄</td>
+						<td><code>0xA2</code></td>
+						<td><code>U+2584</code></td>
+						<td>▀</td>
+						<td><code>U+2580</code></td>
+					</tr>
+					<tr>
+						<td>▌</td>
+						<td><code>0xA1</code></td>
+						<td><code>U+258C</code></td>
+						<td>▐</td>
+						<td><code>U+2590</code></td>
+					</tr>
+					<tr>
+						<td>▚</td>
+						<td><code>0xBF</code></td>
+						<td><code>U+259A</code></td>
+						<td>▞</td>
+						<td><code>U+259E</code></td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Reverse-video flips every quarter — filled becomes empty, and empty becomes filled.
+			If we number the 4 quarters as bits (upper-left as bit-3, upper-right as bit-2, lower-left as bit-1, and lower-right as bit-0 — this numbering is just for illustration; PETSCII does not number them this way), then reverse-video is a bitwise-XOR with <code>0b1111</code>:
+		</p>
+		<figure>
+			<pre>
+┌───────┬───────┬───────┬───────┐
+│   1   │   0   │   0   │   1   │ (▚)
+└───────┴───────┴───────┴───────┘
+               XOR
+┌───────┬───────┬───────┬───────┐
+│   1   │   1   │   1   │   1   │ (mask 0b1111)
+└───────┴───────┴───────┴───────┘
+                =
+┌───────┬───────┬───────┬───────┐
+│   0   │   1   │   1   │   0   │ (▞)
+└───────┴───────┴───────┴───────┘
+			</pre>
+		</figure>
+		<p>
+			(See <a href="../">ASCII</a> for what bitwise-XOR does.)
+		</p>
+		<p>
+			In the drawings below, each <code>#</code> is a filled pixel, and each <code>.</code> is an empty pixel.
+			On a real <abbr title="Personal Electronic Transactor">PET</abbr> (or Commodore 64), the characters <code>▀</code>, <code>▐</code>, <code>▞</code>, <code>▛</code>, <code>▜</code>, <code>▙</code>, <code>▟</code>, and <code>█</code> would be typed as reverse-video.
+		</p>
+		<section>
+			<h1>Lunar Lander</h1>
+			<p>
+				When designing the character-set, Tramiel had two pictures in mind.
+				As he later wrote: “There were two images that I had set as goals.” One was a starship — and: “The other was a lunar lander.”
+				Here is a lunar lander:
+			</p>
+			<p>
+				As pixels (16×12):
+			</p>
+			<figure>
+				<pre>
+......####......
+.....######.....
+....##.##.##....
+....########....
+...##########...
+..############..
+..#.########.#..
+.#..#......#..#.
+.#..#......#..#.
+#....#....#....#
+#.....####.....#
+##............##
+				</pre>
+			</figure>
+			<p>
+				As characters (6×6):
+			</p>
+			<figure>
+				<pre>
+  ▗██▖
+  █▟▙█
+ ▟████▙
+▗▘▛▀▀▜▝▖
+▞ ▚  ▞ ▚
+▙  ▀▀  ▟
+				</pre>
+			</figure>
+		</section>
+		<section>
+			<h1>Heart</h1>
+			<p>
+				A heart:
+			</p>
+			<p>
+				As pixels (12×10):
+			</p>
+			<figure>
+				<pre>
+..##....##..
+.####..####.
+############
+############
+.##########.
+..########..
+...######...
+....####....
+.....##.....
+............
+				</pre>
+			</figure>
+			<p>
+				As characters (6×5):
+			</p>
+			<figure>
+				<pre>
+▗█▖▗█▖
+██████
+▝████▘
+ ▝██▘
+  ▝▘
+				</pre>
+			</figure>
+		</section>
+		<section>
+			<h1>Space Invader</h1>
+			<p>
+				An alien from the 1978 video-game <cite>Space Invaders</cite> (widened by one pixel, so that it lines up with the 2×2 character cells):
+			</p>
+			<p>
+				As pixels (12×8):
+			</p>
+			<figure>
+				<pre>
+..#......#..
+...#....#...
+..########..
+.##.####.##.
+############
+#.########.#
+#.#......#.#
+...##..##...
+				</pre>
+			</figure>
+			<p>
+				As characters (5×4):
+			</p>
+			<figure>
+				<pre>
+ ▚  ▞
+▗▛██▜▖
+▛████▜
+▘▚▖▗▞▝
+				</pre>
+			</figure>
+		</section>
+	</section>
+	<section>
+		<h1>Screen Codes</h1>
+		<p>
+			PETSCII codes are what programs <em>print</em>.
+			But, what is actually stored in the screen's memory is a <em>different</em> numbering, called <strong>screen codes</strong> (or <em>POKE codes</em>).
+		</p>
+		<p>
+			For example, in screen codes <code>@</code> is <code>0</code>, and <code>A</code> is <code>1</code>.
+			An early Commodore manual explains that the screen code:
+		</p>
+		<blockquote>
+			<p>
+				is derived from the standard ASCII set by dropping bit 6; giving us a six bit code
+			</p>
+		</blockquote>
+		<p>
+			I.e., for the letter <code>A</code>:
+		</p>
+		<figure>
+			<pre>
+            ⚑
+            ⇓
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   1   │   0   │   0   │   0   │   0   │   0   │   1   │ (PETSCII “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                               AND
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   1   │   0   │   1   │   1   │   1   │   1   │   1   │   1   │ (mask 0xBF — every bit except bit-6)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+                                =
+┌───────┬───────┬───────┬───────┬───────┬───────┬───────┬───────┐
+│   0   │   0   │   0   │   0   │   0   │   0   │   0   │   1   │ (screen code 1, for “A”)
+└───────┴───────┴───────┴───────┴───────┴───────┴───────┴───────┘
+            ⇑
+            ⚑
+			</pre>
+		</figure>
+		<p>
+			The full mapping (on the VIC-20 and Commodore 64) is:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>PETSCII codes</th>
+						<th>Screen codes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>0x20</code> to <code>0x3F</code></td>
+						<td><code>0x20</code> to <code>0x3F</code> (the same)</td>
+					</tr>
+					<tr>
+						<td><code>0x40</code> to <code>0x5F</code></td>
+						<td><code>0x00</code> to <code>0x1F</code></td>
+					</tr>
+					<tr>
+						<td><code>0x60</code> to <code>0x7F</code></td>
+						<td><code>0x40</code> to <code>0x5F</code></td>
+					</tr>
+					<tr>
+						<td><code>0xA0</code> to <code>0xBF</code></td>
+						<td><code>0x60</code> to <code>0x7F</code></td>
+					</tr>
+					<tr>
+						<td><code>0xC0</code> to <code>0xDF</code></td>
+						<td><code>0x40</code> to <code>0x5F</code></td>
+					</tr>
+					<tr>
+						<td><code>0xE0</code> to <code>0xFE</code></td>
+						<td><code>0x60</code> to <code>0x7E</code></td>
+					</tr>
+					<tr>
+						<td><code>0xFF</code></td>
+						<td><code>0x5E</code> (<code>π</code>)</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Control-codes (<code>0x00</code> to <code>0x1F</code>, and <code>0x80</code> to <code>0x9F</code>) have no screen code.
+		</p>
+		<p>
+			Screen codes use bit-7 for <em>reverse-video</em>.
+			As the <cite>Commodore 64 Programmer's Reference Guide</cite> puts it:
+		</p>
+		<blockquote>
+			<p>
+				The reverse character code may be obtained by adding 128 to the values shown.
+			</p>
+		</blockquote>
+	</section>
+	<section>
+		<h1>Talking to ASCII</h1>
+		<p>
+			Since PETSCII is not <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, Commodore computers had to <em>translate</em> when exchanging text with other computers — for example, over a modem.
+			The <cite>Commodore 64 Programmer's Reference Guide</cite> says:
+		</p>
+		<blockquote>
+			<p>
+				When communicating with other computers, the Commodore character codes must be translated into their ASCII counterparts.
+			</p>
+		</blockquote>
+		<p>
+			Without translation, text written in lower-case / upper-case mode comes out with its case wrong:
+			lower-case letters (<code>0x41</code> to <code>0x5A</code>) arrive as <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> upper-case letters,
+			and upper-case letters (<code>0xC1</code> to <code>0xDA</code>) are not <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> at all.
+			Going the other way, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> lower-case letters (<code>0x61</code> to <code>0x7A</code>) show up on a Commodore 64 as graphics-characters.
+		</p>
+		<p>
+			Here is what translating from PETSCII (in lower-case / upper-case mode) to <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> looks like in the <strong>Go</strong> programming-language (<strong><abbr title="Go programming-language">Golang</abbr></strong>):
+		</p>
+		<figure>
+			<pre>
+<code>package main
+
+import "fmt"
+
+// petsciiToASCII translates a PETSCII code (in lower-case / upper-case mode) to an ASCII code.
+// The second return value is false if the PETSCII code has no ASCII equivalent.
+func petsciiToASCII(c byte) (byte, bool) {
+	switch {
+	case 'A' &lt;= c &amp;&amp; c &lt;= 'Z': // 0x41 to 0x5A are lower-case letters in PETSCII
+		return c | 0x20, true
+	case 0xC1 &lt;= c &amp;&amp; c &lt;= 0xDA: // 0xC1 to 0xDA are upper-case letters in PETSCII
+		return c &amp; 0x7F, true
+	case 0x20 &lt;= c &amp;&amp; c &lt;= 0x40: // space, punctuation, and Arabic-numerals are the same
+		return c, true
+	case c == '[' || c == ']':
+		return c, true
+	case c == 0x0D: // RETURN
+		return c, true
+	case c == 0x14: // DEL (PETSCII) is like BS (ASCII)
+		return 0x08, true
+	default:
+		return 0, false
+	}
+}
+
+func main() {
+	petscii := []byte{0xC8, 0x45, 0x4C, 0x4C, 0x4F, 0x2C, 0x20, 0xD7, 0x4F, 0x52, 0x4C, 0x44, 0x21}
+
+	// Read as if it were ASCII, without translating:
+	fmt.Printf("%q\n", petscii) // "\xc8ELLO, \xd7ORLD!"
+
+	var ascii []byte
+	for _, c := range petscii {
+		if a, ok := petsciiToASCII(c); ok {
+			ascii = append(ascii, a)
+		}
+	}
+	fmt.Printf("%s\n", ascii) // Hello, World!
+
+	_, ok := petsciiToASCII(0x5C) // £ (on the VIC-20 and Commodore 64)
+	fmt.Println(ok)               // false
+}</code>
+			</pre>
+		</figure>
+		<p>
+			Some characters cannot be translated at all.
+			PETSCII's <code>£</code>, <code>π</code>, <code>↑</code>, <code>←</code>, and graphics-characters have no <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> equivalent.
+			And, <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>'s <code>\</code> (except on the <abbr title="Personal Electronic Transactor">PET</abbr>), <code>^</code>, <code>_</code>, <code>`</code>, <code>{</code>, <code>|</code>, <code>}</code>, and <code>~</code> have no PETSCII equivalent.
+		</p>
+		<p>
+			Commodore's own printers did not use <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong> either.
+			For example, on a Commodore printer, <code>14</code> means <em>begin double-width</em> (on the screen, it switches to lower-case / upper-case mode), and <code>17</code> switches the printer to lower-case / upper-case (on the screen, it moves the cursor down).
+		</p>
+	</section>
+	<section>
+		<h1>Differences Between Machines</h1>
+		<p>
+			PETSCII was not exactly the same on every Commodore 8-bit computer:
+		</p>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<th>Machine</th>
+						<th>Year</th>
+						<th><code>0x5C</code></th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><abbr title="Personal Electronic Transactor">PET</abbr> 2001</td>
+						<td>1977</td>
+						<td><code>\</code></td>
+						<td>no color; lower-case mode switched only by <code>POKE</code>, and (at first) with shifted keys giving lower-case; <code>0x60</code> to <code>0x7F</code> repeat <code>0x20</code> to <code>0x3F</code></td>
+					</tr>
+					<tr>
+						<td>VIC-20</td>
+						<td>1980–1981</td>
+						<td><code>£</code></td>
+						<td>8 color control-codes; <code>CHR$(14)</code> and <code>CHR$(142)</code> to switch modes</td>
+					</tr>
+					<tr>
+						<td>Commodore 64</td>
+						<td>1982</td>
+						<td><code>£</code></td>
+						<td>16 color control-codes; thicker lines in the font</td>
+					</tr>
+					<tr>
+						<td>Commodore 16, Plus/4</td>
+						<td>1984</td>
+						<td><code>£</code></td>
+						<td>adds <em>flash on</em> (<code>130</code>) and <em>flash off</em> (<code>132</code>), and <code>ESC</code> sequences</td>
+					</tr>
+					<tr>
+						<td>Commodore 128</td>
+						<td>1985</td>
+						<td><code>£</code></td>
+						<td>adds bell (<code>7</code>), tab (<code>9</code>), line feed (<code>10</code>), <code>ESC</code> sequences, and underline and flash for its 80-column screen</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>
+			Notice that the same code does not always mean the same thing.
+			For example, <code>130</code> means <em>flash on</em> on the Plus/4, but <em>underline off</em> on the Commodore 128.
+		</p>
+	</section>
+	<section>
+		<h1>PETSCII Today</h1>
+		<section>
+			<h1>Unicode</h1>
+			<p>
+				Many PETSCII characters were already in <strong>Unicode</strong> — such as <code>£</code> (<code>U+00A3</code>), <code>π</code> (<code>U+03C0</code>), <code>↑</code> (<code>U+2191</code>), <code>←</code> (<code>U+2190</code>), the card suits, and many box-drawing characters and block elements.
+				But, many were not.
+			</p>
+			<p>
+				In April 2017, a mailing-list discussion about PETSCII led to the formation of a <em>Terminals Working Group</em>.
+				Its proposal — “Proposal to add characters from legacy computers and teletext to the UCS” (by Doug Ewell, Rebecca Bettencourt, and others) — begins:
+			</p>
+			<blockquote>
+				<p>
+					A list discussion in April 2017 concerning the “PETSCII” character set, used in various forms by Commodore home computers ranging from the PET (1977) to the C128 (1985), led to the formation of an ad-hoc Terminals Working Group.
+				</p>
+			</blockquote>
+			<p>
+				The result was the <strong>Symbols for Legacy Computing</strong> block (<code>U+1FB00</code> to <code>U+1FBFF</code>), added in Unicode 13.0 on March 10th, 2020.
+				It includes the remaining PETSCII graphics-characters — such as the one-eighth blocks, and the checkerboards (<code>U+1FB95</code> for the <abbr title="Personal Electronic Transactor">PET</abbr> and VIC-20, and <code>U+1FB96</code> for the Commodore 64 and 128, which have it inverted).
+			</p>
+			<p>
+				So, today, every printable PETSCII character of the <abbr title="Personal Electronic Transactor">PET</abbr>, VIC-20, Commodore 64, and Commodore 128 has a Unicode equivalent.
+				But, two things were left out on purpose:
+				<em>reverse-video</em> characters (which are considered a matter of display, not of character), and PETSCII's <em>control-codes</em>.
+			</p>
+			<p>
+				(See “Unicode Equivalents”, below, for every PETSCII character and its Unicode equivalent.)
+			</p>
+		</section>
+		<section>
+			<h1>PETSCII Art</h1>
+			<p>
+				Because its graphics-characters can be typed straight from the keyboard, PETSCII has always been used to make pictures — in early games, in Commodore <abbr title="bulletin board system">BBS</abbr> menus and logos, and in the demoscene.
+			</p>
+			<p>
+				Since around 2013, there has been a revival of <strong>PETSCII art</strong>.
+				The <em>Plain PETSCII Graphics Competition</em> in 2013 received 106 entries, with the rules requiring an unmodified Commodore 64 and its built-in characters only.
+				Demoparties have since held PETSCII competitions.
+				And, there are modern PETSCII editors — such as Marq's <em>PETSCII</em> editor, <em>Petmate</em>, and <em>Playscii</em>.
+			</p>
+			<p>
+				A 2018 academic paper, “PETSCII – A Character Set and a Creative Platform” (by Markku Reunanen, Tero Heikkinen, and Anders Carlsson), studied this — and describes PETSCII as a low-threshold way into the Commodore 64 scene.
+			</p>
+		</section>
+		<section>
+			<h1>BBSes</h1>
+			<p>
+				Commodore <abbr title="bulletin board system">BBS</abbr>es used PETSCII — including its colors and graphics-characters — in what is usually called <strong>C/G</strong> (color / graphics) mode.
+				Some PETSCII <abbr title="bulletin board system">BBS</abbr>es are still running today, reachable over telnet.
+			</p>
+		</section>
+		<section>
+			<h1>New Machines</h1>
+			<p>
+				PETSCII is still used by new 8-bit computers inspired by Commodore's.
+				The <strong>MEGA65</strong> uses the Commodore 64's PETSCII characters.
+				And, the <strong>Commander X16</strong> uses PETSCII by default — but also has an <em>ISO mode</em> (using <abbr title="International Organization for Standardization">ISO</abbr>-8859-15), which is much closer to <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.
+			</p>
+			<p>
+				(Commodore's later Amiga computers did not use PETSCII.
+				They used <abbr title="International Organization for Standardization">ISO</abbr> 8859-1 (<em>Latin-1</em>), which contains <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>.)
+			</p>
+		</section>
+	</section>
+	<section>
+		<h1>Unicode Equivalents</h1>
+		<p>
+			Here is every PETSCII code, with its Unicode equivalent, in both modes.
+			The table is for the Commodore 64 (and the Commodore 128).
+			The last column shows where the <abbr title="Personal Electronic Transactor">PET</abbr> and VIC-20 differ.
+		</p>
+		<p>
+			It is based on the mapping tables by Rebecca Bettencourt that were included with the Unicode proposal — with two corrections, from Commodore's own documentation and <abbr title="read-only memory">ROM</abbr> source code:
+		</p>
+		<ul>
+			<li>the mapping tables treat the <abbr title="Personal Electronic Transactor">PET</abbr>'s <code>0x60</code> to <code>0x7F</code> the same as the Commodore 64's — but, on the <abbr title="Personal Electronic Transactor">PET</abbr>, these codes repeat <code>0x20</code> to <code>0x3F</code> (see “Duplicate Codes”, above),</li>
+			<li>the mapping tables map <code>0xFF</code> to <code>U+259A</code> (quadrant upper left and lower right), as a repeat of <code>0xBF</code> — but, the <cite>Commodore 64 Programmer's Reference Guide</cite> says “CODE 255 SAME AS 126”, and so the table shows <code>0xFF</code> the same as <code>0x7E</code> and <code>0xDE</code>.</li>
+		</ul>
+		<p>
+			Also, the <abbr title="Personal Electronic Transactor">PET</abbr> differences in the table are for later <abbr title="Personal Electronic Transactor">PET</abbr>s.
+			On the original <abbr title="Personal Electronic Transactor">PET</abbr> 2001, in lower-case / upper-case mode, <code>0x41</code> to <code>0x5A</code> displayed upper-case letters, and <code>0xC1</code> to <code>0xDA</code> displayed lower-case letters (see “The Original PET”, above).
+		</p>
+		<p>
+			And, <em>reverse-video</em> is not in the table — since reverse-video is part of the screen codes, not the PETSCII codes.
+		</p>
+		<section>
+			<h1>Control-Codes</h1>
+			<p>
+				Unicode does not have PETSCII's <em>control-codes</em>.
+				By convention, PETSCII's control-codes are mapped to the Unicode control-codes with the same number — i.e., <code>0x00</code> to <code>0x1F</code> map to <code>U+0000</code> to <code>U+001F</code>, and <code>0x80</code> to <code>0x9F</code> map to <code>U+0080</code> to <code>U+009F</code>.
+			</p>
+			<p>
+				Note that this keeps the <em>number</em>, not the <em>meaning</em>.
+				For example, PETSCII's <em>cursor down</em> (<code>0x11</code>) maps to <code>U+0011</code> — which, in Unicode (and <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>), is <code>DC1</code>.
+			</p>
+		</section>
+		<section>
+			<h1>Two Valid Equivalents</h1>
+			<p>
+				Four PETSCII characters each have <em>two</em> valid Unicode equivalents.
+				Which one is right depends on how the character is being used.
+			</p>
+			<figure>
+				<table>
+					<thead>
+						<tr>
+							<th>Character</th>
+							<th>PETSCII Codes</th>
+							<th>Unicode</th>
+							<th>Or</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>horizontal line</td>
+							<td><code>0x60</code>, <code>0xC0</code></td>
+							<td>─ <code>U+2500</code> (box drawings light horizontal)</td>
+							<td>🭹 <code>U+1FB79</code> (horizontal one eighth block-5)</td>
+						</tr>
+						<tr>
+							<td>vertical line</td>
+							<td><code>0x7D</code>, <code>0xDD</code></td>
+							<td>│ <code>U+2502</code> (box drawings light vertical)</td>
+							<td>🭳 <code>U+1FB73</code> (vertical one eighth block-5)</td>
+						</tr>
+						<tr>
+							<td>filled circle</td>
+							<td><code>0x71</code>, <code>0xD1</code></td>
+							<td>• <code>U+2022</code> (bullet)</td>
+							<td>● <code>U+25CF</code> (black circle)</td>
+						</tr>
+						<tr>
+							<td>empty circle</td>
+							<td><code>0x77</code>, <code>0xD7</code></td>
+							<td>○ <code>U+25CB</code> (white circle)</td>
+							<td>◦ <code>U+25E6</code> (white bullet)</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
+			<p>
+				(The circles are only in upper-case / graphics mode.
+				In lower-case / upper-case mode, <code>0xD1</code> and <code>0xD7</code> are <code>Q</code> and <code>W</code>.)
+			</p>
+			<p>
+				In the table below, these show the first equivalent, and then the second.
+			</p>
+		</section>
+		<section>
+			<h1>The Table</h1>
+			<figure>
+				<table>
+					<thead>
+						<tr>
+							<th>Decimal</th>
+							<th>Hexadecimal</th>
+							<th>Upper-Case / Graphics</th>
+							<th>Unicode</th>
+							<th>Lower-Case / Upper-Case</th>
+							<th>Unicode</th>
+							<th>PET and VIC-20 Differences</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td>
+							<td><code>0x00</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0000</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><code>0x01</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0001</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><code>0x02</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0002</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><code>0x03</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0003</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td><code>0x04</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0004</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td><code>0x05</code></td>
+							<td colspan="4">control-code: white — <code>U+0005</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td><code>0x06</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0006</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td><code>0x07</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0007</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td><code>0x08</code></td>
+							<td colspan="4">control-code: disable case switching — <code>U+0008</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td><code>0x09</code></td>
+							<td colspan="4">control-code: enable case switching — <code>U+0009</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td><code>0x0A</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+000A</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td><code>0x0B</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+000B</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td><code>0x0C</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+000C</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td><code>0x0D</code></td>
+							<td colspan="4">control-code: RETURN — <code>U+000D</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td><code>0x0E</code></td>
+							<td colspan="4">control-code: lower-case / upper-case mode — <code>U+000E</code></td>
+							<td>VIC-20, C64, and later PETs</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td><code>0x0F</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+000F</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>16</td>
+							<td><code>0x10</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0010</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<td><code>0x11</code></td>
+							<td colspan="4">control-code: cursor down — <code>U+0011</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<td><code>0x12</code></td>
+							<td colspan="4">control-code: RVS ON (reverse-video on) — <code>U+0012</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>19</td>
+							<td><code>0x13</code></td>
+							<td colspan="4">control-code: HOME — <code>U+0013</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>20</td>
+							<td><code>0x14</code></td>
+							<td colspan="4">control-code: DEL (delete) — <code>U+0014</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>21</td>
+							<td><code>0x15</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0015</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td><code>0x16</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0016</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>23</td>
+							<td><code>0x17</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0017</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>24</td>
+							<td><code>0x18</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0018</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>25</td>
+							<td><code>0x19</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0019</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>26</td>
+							<td><code>0x1A</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+001A</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>27</td>
+							<td><code>0x1B</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+001B</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>28</td>
+							<td><code>0x1C</code></td>
+							<td colspan="4">control-code: red — <code>U+001C</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>29</td>
+							<td><code>0x1D</code></td>
+							<td colspan="4">control-code: cursor right — <code>U+001D</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>30</td>
+							<td><code>0x1E</code></td>
+							<td colspan="4">control-code: green — <code>U+001E</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>31</td>
+							<td><code>0x1F</code></td>
+							<td colspan="4">control-code: blue — <code>U+001F</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>32</td>
+							<td><code>0x20</code></td>
+							<td><em>(space)</em></td>
+							<td><code>U+0020</code> (space)</td>
+							<td><em>(space)</em></td>
+							<td><code>U+0020</code> (space)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>33</td>
+							<td><code>0x21</code></td>
+							<td>!</td>
+							<td><code>U+0021</code> (exclamation mark)</td>
+							<td>!</td>
+							<td><code>U+0021</code> (exclamation mark)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>34</td>
+							<td><code>0x22</code></td>
+							<td>"</td>
+							<td><code>U+0022</code> (quotation mark)</td>
+							<td>"</td>
+							<td><code>U+0022</code> (quotation mark)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>35</td>
+							<td><code>0x23</code></td>
+							<td>#</td>
+							<td><code>U+0023</code> (number sign)</td>
+							<td>#</td>
+							<td><code>U+0023</code> (number sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>36</td>
+							<td><code>0x24</code></td>
+							<td>$</td>
+							<td><code>U+0024</code> (dollar sign)</td>
+							<td>$</td>
+							<td><code>U+0024</code> (dollar sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>37</td>
+							<td><code>0x25</code></td>
+							<td>%</td>
+							<td><code>U+0025</code> (percent sign)</td>
+							<td>%</td>
+							<td><code>U+0025</code> (percent sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>38</td>
+							<td><code>0x26</code></td>
+							<td>&amp;</td>
+							<td><code>U+0026</code> (ampersand)</td>
+							<td>&amp;</td>
+							<td><code>U+0026</code> (ampersand)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>39</td>
+							<td><code>0x27</code></td>
+							<td>'</td>
+							<td><code>U+0027</code> (apostrophe)</td>
+							<td>'</td>
+							<td><code>U+0027</code> (apostrophe)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>40</td>
+							<td><code>0x28</code></td>
+							<td>(</td>
+							<td><code>U+0028</code> (left parenthesis)</td>
+							<td>(</td>
+							<td><code>U+0028</code> (left parenthesis)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>41</td>
+							<td><code>0x29</code></td>
+							<td>)</td>
+							<td><code>U+0029</code> (right parenthesis)</td>
+							<td>)</td>
+							<td><code>U+0029</code> (right parenthesis)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>42</td>
+							<td><code>0x2A</code></td>
+							<td>*</td>
+							<td><code>U+002A</code> (asterisk)</td>
+							<td>*</td>
+							<td><code>U+002A</code> (asterisk)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>43</td>
+							<td><code>0x2B</code></td>
+							<td>+</td>
+							<td><code>U+002B</code> (plus sign)</td>
+							<td>+</td>
+							<td><code>U+002B</code> (plus sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>44</td>
+							<td><code>0x2C</code></td>
+							<td>,</td>
+							<td><code>U+002C</code> (comma)</td>
+							<td>,</td>
+							<td><code>U+002C</code> (comma)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>45</td>
+							<td><code>0x2D</code></td>
+							<td>-</td>
+							<td><code>U+002D</code> (hyphen-minus)</td>
+							<td>-</td>
+							<td><code>U+002D</code> (hyphen-minus)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>46</td>
+							<td><code>0x2E</code></td>
+							<td>.</td>
+							<td><code>U+002E</code> (full stop)</td>
+							<td>.</td>
+							<td><code>U+002E</code> (full stop)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>47</td>
+							<td><code>0x2F</code></td>
+							<td>/</td>
+							<td><code>U+002F</code> (solidus)</td>
+							<td>/</td>
+							<td><code>U+002F</code> (solidus)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>48</td>
+							<td><code>0x30</code></td>
+							<td>0</td>
+							<td><code>U+0030</code> (digit zero)</td>
+							<td>0</td>
+							<td><code>U+0030</code> (digit zero)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>49</td>
+							<td><code>0x31</code></td>
+							<td>1</td>
+							<td><code>U+0031</code> (digit one)</td>
+							<td>1</td>
+							<td><code>U+0031</code> (digit one)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>50</td>
+							<td><code>0x32</code></td>
+							<td>2</td>
+							<td><code>U+0032</code> (digit two)</td>
+							<td>2</td>
+							<td><code>U+0032</code> (digit two)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>51</td>
+							<td><code>0x33</code></td>
+							<td>3</td>
+							<td><code>U+0033</code> (digit three)</td>
+							<td>3</td>
+							<td><code>U+0033</code> (digit three)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>52</td>
+							<td><code>0x34</code></td>
+							<td>4</td>
+							<td><code>U+0034</code> (digit four)</td>
+							<td>4</td>
+							<td><code>U+0034</code> (digit four)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>53</td>
+							<td><code>0x35</code></td>
+							<td>5</td>
+							<td><code>U+0035</code> (digit five)</td>
+							<td>5</td>
+							<td><code>U+0035</code> (digit five)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>54</td>
+							<td><code>0x36</code></td>
+							<td>6</td>
+							<td><code>U+0036</code> (digit six)</td>
+							<td>6</td>
+							<td><code>U+0036</code> (digit six)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>55</td>
+							<td><code>0x37</code></td>
+							<td>7</td>
+							<td><code>U+0037</code> (digit seven)</td>
+							<td>7</td>
+							<td><code>U+0037</code> (digit seven)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>56</td>
+							<td><code>0x38</code></td>
+							<td>8</td>
+							<td><code>U+0038</code> (digit eight)</td>
+							<td>8</td>
+							<td><code>U+0038</code> (digit eight)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>57</td>
+							<td><code>0x39</code></td>
+							<td>9</td>
+							<td><code>U+0039</code> (digit nine)</td>
+							<td>9</td>
+							<td><code>U+0039</code> (digit nine)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>58</td>
+							<td><code>0x3A</code></td>
+							<td>:</td>
+							<td><code>U+003A</code> (colon)</td>
+							<td>:</td>
+							<td><code>U+003A</code> (colon)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>59</td>
+							<td><code>0x3B</code></td>
+							<td>;</td>
+							<td><code>U+003B</code> (semicolon)</td>
+							<td>;</td>
+							<td><code>U+003B</code> (semicolon)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>60</td>
+							<td><code>0x3C</code></td>
+							<td>&lt;</td>
+							<td><code>U+003C</code> (less-than sign)</td>
+							<td>&lt;</td>
+							<td><code>U+003C</code> (less-than sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>61</td>
+							<td><code>0x3D</code></td>
+							<td>=</td>
+							<td><code>U+003D</code> (equals sign)</td>
+							<td>=</td>
+							<td><code>U+003D</code> (equals sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>62</td>
+							<td><code>0x3E</code></td>
+							<td>&gt;</td>
+							<td><code>U+003E</code> (greater-than sign)</td>
+							<td>&gt;</td>
+							<td><code>U+003E</code> (greater-than sign)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>63</td>
+							<td><code>0x3F</code></td>
+							<td>?</td>
+							<td><code>U+003F</code> (question mark)</td>
+							<td>?</td>
+							<td><code>U+003F</code> (question mark)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>64</td>
+							<td><code>0x40</code></td>
+							<td>@</td>
+							<td><code>U+0040</code> (commercial at)</td>
+							<td>@</td>
+							<td><code>U+0040</code> (commercial at)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>65</td>
+							<td><code>0x41</code></td>
+							<td>A</td>
+							<td><code>U+0041</code> (latin capital letter a)</td>
+							<td>a</td>
+							<td><code>U+0061</code> (latin small letter a)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>66</td>
+							<td><code>0x42</code></td>
+							<td>B</td>
+							<td><code>U+0042</code> (latin capital letter b)</td>
+							<td>b</td>
+							<td><code>U+0062</code> (latin small letter b)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>67</td>
+							<td><code>0x43</code></td>
+							<td>C</td>
+							<td><code>U+0043</code> (latin capital letter c)</td>
+							<td>c</td>
+							<td><code>U+0063</code> (latin small letter c)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>68</td>
+							<td><code>0x44</code></td>
+							<td>D</td>
+							<td><code>U+0044</code> (latin capital letter d)</td>
+							<td>d</td>
+							<td><code>U+0064</code> (latin small letter d)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>69</td>
+							<td><code>0x45</code></td>
+							<td>E</td>
+							<td><code>U+0045</code> (latin capital letter e)</td>
+							<td>e</td>
+							<td><code>U+0065</code> (latin small letter e)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>70</td>
+							<td><code>0x46</code></td>
+							<td>F</td>
+							<td><code>U+0046</code> (latin capital letter f)</td>
+							<td>f</td>
+							<td><code>U+0066</code> (latin small letter f)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>71</td>
+							<td><code>0x47</code></td>
+							<td>G</td>
+							<td><code>U+0047</code> (latin capital letter g)</td>
+							<td>g</td>
+							<td><code>U+0067</code> (latin small letter g)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>72</td>
+							<td><code>0x48</code></td>
+							<td>H</td>
+							<td><code>U+0048</code> (latin capital letter h)</td>
+							<td>h</td>
+							<td><code>U+0068</code> (latin small letter h)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>73</td>
+							<td><code>0x49</code></td>
+							<td>I</td>
+							<td><code>U+0049</code> (latin capital letter i)</td>
+							<td>i</td>
+							<td><code>U+0069</code> (latin small letter i)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>74</td>
+							<td><code>0x4A</code></td>
+							<td>J</td>
+							<td><code>U+004A</code> (latin capital letter j)</td>
+							<td>j</td>
+							<td><code>U+006A</code> (latin small letter j)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>75</td>
+							<td><code>0x4B</code></td>
+							<td>K</td>
+							<td><code>U+004B</code> (latin capital letter k)</td>
+							<td>k</td>
+							<td><code>U+006B</code> (latin small letter k)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>76</td>
+							<td><code>0x4C</code></td>
+							<td>L</td>
+							<td><code>U+004C</code> (latin capital letter l)</td>
+							<td>l</td>
+							<td><code>U+006C</code> (latin small letter l)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>77</td>
+							<td><code>0x4D</code></td>
+							<td>M</td>
+							<td><code>U+004D</code> (latin capital letter m)</td>
+							<td>m</td>
+							<td><code>U+006D</code> (latin small letter m)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>78</td>
+							<td><code>0x4E</code></td>
+							<td>N</td>
+							<td><code>U+004E</code> (latin capital letter n)</td>
+							<td>n</td>
+							<td><code>U+006E</code> (latin small letter n)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>79</td>
+							<td><code>0x4F</code></td>
+							<td>O</td>
+							<td><code>U+004F</code> (latin capital letter o)</td>
+							<td>o</td>
+							<td><code>U+006F</code> (latin small letter o)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>80</td>
+							<td><code>0x50</code></td>
+							<td>P</td>
+							<td><code>U+0050</code> (latin capital letter p)</td>
+							<td>p</td>
+							<td><code>U+0070</code> (latin small letter p)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>81</td>
+							<td><code>0x51</code></td>
+							<td>Q</td>
+							<td><code>U+0051</code> (latin capital letter q)</td>
+							<td>q</td>
+							<td><code>U+0071</code> (latin small letter q)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>82</td>
+							<td><code>0x52</code></td>
+							<td>R</td>
+							<td><code>U+0052</code> (latin capital letter r)</td>
+							<td>r</td>
+							<td><code>U+0072</code> (latin small letter r)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>83</td>
+							<td><code>0x53</code></td>
+							<td>S</td>
+							<td><code>U+0053</code> (latin capital letter s)</td>
+							<td>s</td>
+							<td><code>U+0073</code> (latin small letter s)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>84</td>
+							<td><code>0x54</code></td>
+							<td>T</td>
+							<td><code>U+0054</code> (latin capital letter t)</td>
+							<td>t</td>
+							<td><code>U+0074</code> (latin small letter t)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>85</td>
+							<td><code>0x55</code></td>
+							<td>U</td>
+							<td><code>U+0055</code> (latin capital letter u)</td>
+							<td>u</td>
+							<td><code>U+0075</code> (latin small letter u)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>86</td>
+							<td><code>0x56</code></td>
+							<td>V</td>
+							<td><code>U+0056</code> (latin capital letter v)</td>
+							<td>v</td>
+							<td><code>U+0076</code> (latin small letter v)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>87</td>
+							<td><code>0x57</code></td>
+							<td>W</td>
+							<td><code>U+0057</code> (latin capital letter w)</td>
+							<td>w</td>
+							<td><code>U+0077</code> (latin small letter w)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>88</td>
+							<td><code>0x58</code></td>
+							<td>X</td>
+							<td><code>U+0058</code> (latin capital letter x)</td>
+							<td>x</td>
+							<td><code>U+0078</code> (latin small letter x)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>89</td>
+							<td><code>0x59</code></td>
+							<td>Y</td>
+							<td><code>U+0059</code> (latin capital letter y)</td>
+							<td>y</td>
+							<td><code>U+0079</code> (latin small letter y)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>90</td>
+							<td><code>0x5A</code></td>
+							<td>Z</td>
+							<td><code>U+005A</code> (latin capital letter z)</td>
+							<td>z</td>
+							<td><code>U+007A</code> (latin small letter z)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>91</td>
+							<td><code>0x5B</code></td>
+							<td>[</td>
+							<td><code>U+005B</code> (left square bracket)</td>
+							<td>[</td>
+							<td><code>U+005B</code> (left square bracket)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>92</td>
+							<td><code>0x5C</code></td>
+							<td>£</td>
+							<td><code>U+00A3</code> (pound sign)</td>
+							<td>£</td>
+							<td><code>U+00A3</code> (pound sign)</td>
+							<td>PET: \ <code>U+005C</code> (reverse solidus), in both modes</td>
+						</tr>
+						<tr>
+							<td>93</td>
+							<td><code>0x5D</code></td>
+							<td>]</td>
+							<td><code>U+005D</code> (right square bracket)</td>
+							<td>]</td>
+							<td><code>U+005D</code> (right square bracket)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>94</td>
+							<td><code>0x5E</code></td>
+							<td>↑</td>
+							<td><code>U+2191</code> (upwards arrow)</td>
+							<td>↑</td>
+							<td><code>U+2191</code> (upwards arrow)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>95</td>
+							<td><code>0x5F</code></td>
+							<td>←</td>
+							<td><code>U+2190</code> (leftwards arrow)</td>
+							<td>←</td>
+							<td><code>U+2190</code> (leftwards arrow)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>96</td>
+							<td><code>0x60</code></td>
+							<td>─</td>
+							<td><code>U+2500</code> (box drawings light horizontal) — or 🭹 <code>U+1FB79</code> (horizontal one eighth block-5)</td>
+							<td>─</td>
+							<td><code>U+2500</code> (box drawings light horizontal) — or 🭹 <code>U+1FB79</code> (horizontal one eighth block-5)</td>
+							<td>PET: same as <code>0x20</code> (<em>(space)</em>), in both modes</td>
+						</tr>
+						<tr>
+							<td>97</td>
+							<td><code>0x61</code></td>
+							<td>♠</td>
+							<td><code>U+2660</code> (black spade suit)</td>
+							<td>A</td>
+							<td><code>U+0041</code> (latin capital letter a)</td>
+							<td>PET: same as <code>0x21</code> (!), in both modes</td>
+						</tr>
+						<tr>
+							<td>98</td>
+							<td><code>0x62</code></td>
+							<td>🭲</td>
+							<td><code>U+1FB72</code> (vertical one eighth block-4)</td>
+							<td>B</td>
+							<td><code>U+0042</code> (latin capital letter b)</td>
+							<td>PET: same as <code>0x22</code> ("), in both modes</td>
+						</tr>
+						<tr>
+							<td>99</td>
+							<td><code>0x63</code></td>
+							<td>🭸</td>
+							<td><code>U+1FB78</code> (horizontal one eighth block-4)</td>
+							<td>C</td>
+							<td><code>U+0043</code> (latin capital letter c)</td>
+							<td>PET: same as <code>0x23</code> (#), in both modes</td>
+						</tr>
+						<tr>
+							<td>100</td>
+							<td><code>0x64</code></td>
+							<td>🭷</td>
+							<td><code>U+1FB77</code> (horizontal one eighth block-3)</td>
+							<td>D</td>
+							<td><code>U+0044</code> (latin capital letter d)</td>
+							<td>PET: same as <code>0x24</code> ($), in both modes</td>
+						</tr>
+						<tr>
+							<td>101</td>
+							<td><code>0x65</code></td>
+							<td>🭶</td>
+							<td><code>U+1FB76</code> (horizontal one eighth block-2)</td>
+							<td>E</td>
+							<td><code>U+0045</code> (latin capital letter e)</td>
+							<td>PET: same as <code>0x25</code> (%), in both modes</td>
+						</tr>
+						<tr>
+							<td>102</td>
+							<td><code>0x66</code></td>
+							<td>🭺</td>
+							<td><code>U+1FB7A</code> (horizontal one eighth block-6)</td>
+							<td>F</td>
+							<td><code>U+0046</code> (latin capital letter f)</td>
+							<td>PET: same as <code>0x26</code> (&amp;), in both modes</td>
+						</tr>
+						<tr>
+							<td>103</td>
+							<td><code>0x67</code></td>
+							<td>🭱</td>
+							<td><code>U+1FB71</code> (vertical one eighth block-3)</td>
+							<td>G</td>
+							<td><code>U+0047</code> (latin capital letter g)</td>
+							<td>PET: same as <code>0x27</code> ('), in both modes</td>
+						</tr>
+						<tr>
+							<td>104</td>
+							<td><code>0x68</code></td>
+							<td>🭴</td>
+							<td><code>U+1FB74</code> (vertical one eighth block-6)</td>
+							<td>H</td>
+							<td><code>U+0048</code> (latin capital letter h)</td>
+							<td>PET: same as <code>0x28</code> ((), in both modes</td>
+						</tr>
+						<tr>
+							<td>105</td>
+							<td><code>0x69</code></td>
+							<td>╮</td>
+							<td><code>U+256E</code> (box drawings light arc down and left)</td>
+							<td>I</td>
+							<td><code>U+0049</code> (latin capital letter i)</td>
+							<td>PET: same as <code>0x29</code> ()), in both modes</td>
+						</tr>
+						<tr>
+							<td>106</td>
+							<td><code>0x6A</code></td>
+							<td>╰</td>
+							<td><code>U+2570</code> (box drawings light arc up and right)</td>
+							<td>J</td>
+							<td><code>U+004A</code> (latin capital letter j)</td>
+							<td>PET: same as <code>0x2A</code> (*), in both modes</td>
+						</tr>
+						<tr>
+							<td>107</td>
+							<td><code>0x6B</code></td>
+							<td>╯</td>
+							<td><code>U+256F</code> (box drawings light arc up and left)</td>
+							<td>K</td>
+							<td><code>U+004B</code> (latin capital letter k)</td>
+							<td>PET: same as <code>0x2B</code> (+), in both modes</td>
+						</tr>
+						<tr>
+							<td>108</td>
+							<td><code>0x6C</code></td>
+							<td>🭼</td>
+							<td><code>U+1FB7C</code> (left and lower one eighth block)</td>
+							<td>L</td>
+							<td><code>U+004C</code> (latin capital letter l)</td>
+							<td>PET: same as <code>0x2C</code> (,), in both modes</td>
+						</tr>
+						<tr>
+							<td>109</td>
+							<td><code>0x6D</code></td>
+							<td>╲</td>
+							<td><code>U+2572</code> (box drawings light diagonal upper left to lower right)</td>
+							<td>M</td>
+							<td><code>U+004D</code> (latin capital letter m)</td>
+							<td>PET: same as <code>0x2D</code> (-), in both modes</td>
+						</tr>
+						<tr>
+							<td>110</td>
+							<td><code>0x6E</code></td>
+							<td>╱</td>
+							<td><code>U+2571</code> (box drawings light diagonal upper right to lower left)</td>
+							<td>N</td>
+							<td><code>U+004E</code> (latin capital letter n)</td>
+							<td>PET: same as <code>0x2E</code> (.), in both modes</td>
+						</tr>
+						<tr>
+							<td>111</td>
+							<td><code>0x6F</code></td>
+							<td>🭽</td>
+							<td><code>U+1FB7D</code> (left and upper one eighth block)</td>
+							<td>O</td>
+							<td><code>U+004F</code> (latin capital letter o)</td>
+							<td>PET: same as <code>0x2F</code> (/), in both modes</td>
+						</tr>
+						<tr>
+							<td>112</td>
+							<td><code>0x70</code></td>
+							<td>🭾</td>
+							<td><code>U+1FB7E</code> (right and upper one eighth block)</td>
+							<td>P</td>
+							<td><code>U+0050</code> (latin capital letter p)</td>
+							<td>PET: same as <code>0x30</code> (0), in both modes</td>
+						</tr>
+						<tr>
+							<td>113</td>
+							<td><code>0x71</code></td>
+							<td>•</td>
+							<td><code>U+2022</code> (bullet) — or ● <code>U+25CF</code> (black circle)</td>
+							<td>Q</td>
+							<td><code>U+0051</code> (latin capital letter q)</td>
+							<td>PET: same as <code>0x31</code> (1), in both modes</td>
+						</tr>
+						<tr>
+							<td>114</td>
+							<td><code>0x72</code></td>
+							<td>🭻</td>
+							<td><code>U+1FB7B</code> (horizontal one eighth block-7)</td>
+							<td>R</td>
+							<td><code>U+0052</code> (latin capital letter r)</td>
+							<td>PET: same as <code>0x32</code> (2), in both modes</td>
+						</tr>
+						<tr>
+							<td>115</td>
+							<td><code>0x73</code></td>
+							<td>♥</td>
+							<td><code>U+2665</code> (black heart suit)</td>
+							<td>S</td>
+							<td><code>U+0053</code> (latin capital letter s)</td>
+							<td>PET: same as <code>0x33</code> (3), in both modes</td>
+						</tr>
+						<tr>
+							<td>116</td>
+							<td><code>0x74</code></td>
+							<td>🭰</td>
+							<td><code>U+1FB70</code> (vertical one eighth block-2)</td>
+							<td>T</td>
+							<td><code>U+0054</code> (latin capital letter t)</td>
+							<td>PET: same as <code>0x34</code> (4), in both modes</td>
+						</tr>
+						<tr>
+							<td>117</td>
+							<td><code>0x75</code></td>
+							<td>╭</td>
+							<td><code>U+256D</code> (box drawings light arc down and right)</td>
+							<td>U</td>
+							<td><code>U+0055</code> (latin capital letter u)</td>
+							<td>PET: same as <code>0x35</code> (5), in both modes</td>
+						</tr>
+						<tr>
+							<td>118</td>
+							<td><code>0x76</code></td>
+							<td>╳</td>
+							<td><code>U+2573</code> (box drawings light diagonal cross)</td>
+							<td>V</td>
+							<td><code>U+0056</code> (latin capital letter v)</td>
+							<td>PET: same as <code>0x36</code> (6), in both modes</td>
+						</tr>
+						<tr>
+							<td>119</td>
+							<td><code>0x77</code></td>
+							<td>○</td>
+							<td><code>U+25CB</code> (white circle) — or ◦ <code>U+25E6</code> (white bullet)</td>
+							<td>W</td>
+							<td><code>U+0057</code> (latin capital letter w)</td>
+							<td>PET: same as <code>0x37</code> (7), in both modes</td>
+						</tr>
+						<tr>
+							<td>120</td>
+							<td><code>0x78</code></td>
+							<td>♣</td>
+							<td><code>U+2663</code> (black club suit)</td>
+							<td>X</td>
+							<td><code>U+0058</code> (latin capital letter x)</td>
+							<td>PET: same as <code>0x38</code> (8), in both modes</td>
+						</tr>
+						<tr>
+							<td>121</td>
+							<td><code>0x79</code></td>
+							<td>🭵</td>
+							<td><code>U+1FB75</code> (vertical one eighth block-7)</td>
+							<td>Y</td>
+							<td><code>U+0059</code> (latin capital letter y)</td>
+							<td>PET: same as <code>0x39</code> (9), in both modes</td>
+						</tr>
+						<tr>
+							<td>122</td>
+							<td><code>0x7A</code></td>
+							<td>♦</td>
+							<td><code>U+2666</code> (black diamond suit)</td>
+							<td>Z</td>
+							<td><code>U+005A</code> (latin capital letter z)</td>
+							<td>PET: same as <code>0x3A</code> (:), in both modes</td>
+						</tr>
+						<tr>
+							<td>123</td>
+							<td><code>0x7B</code></td>
+							<td>┼</td>
+							<td><code>U+253C</code> (box drawings light vertical and horizontal)</td>
+							<td>┼</td>
+							<td><code>U+253C</code> (box drawings light vertical and horizontal)</td>
+							<td>PET: same as <code>0x3B</code> (;), in both modes</td>
+						</tr>
+						<tr>
+							<td>124</td>
+							<td><code>0x7C</code></td>
+							<td>🮌</td>
+							<td><code>U+1FB8C</code> (left half medium shade)</td>
+							<td>🮌</td>
+							<td><code>U+1FB8C</code> (left half medium shade)</td>
+							<td>PET: same as <code>0x3C</code> (&lt;), in both modes</td>
+						</tr>
+						<tr>
+							<td>125</td>
+							<td><code>0x7D</code></td>
+							<td>│</td>
+							<td><code>U+2502</code> (box drawings light vertical) — or 🭳 <code>U+1FB73</code> (vertical one eighth block-5)</td>
+							<td>│</td>
+							<td><code>U+2502</code> (box drawings light vertical) — or 🭳 <code>U+1FB73</code> (vertical one eighth block-5)</td>
+							<td>PET: same as <code>0x3D</code> (=), in both modes</td>
+						</tr>
+						<tr>
+							<td>126</td>
+							<td><code>0x7E</code></td>
+							<td>π</td>
+							<td><code>U+03C0</code> (greek small letter pi)</td>
+							<td>🮖</td>
+							<td><code>U+1FB96</code> (inverse checker board fill)</td>
+							<td>PET: same as <code>0x3E</code> (&gt;), in both modes<br />VIC-20 (lower-case / upper-case): 🮕 <code>U+1FB95</code> (checker board fill)</td>
+						</tr>
+						<tr>
+							<td>127</td>
+							<td><code>0x7F</code></td>
+							<td>◥</td>
+							<td><code>U+25E5</code> (black upper right triangle)</td>
+							<td>🮘</td>
+							<td><code>U+1FB98</code> (upper left to lower right fill)</td>
+							<td>PET: same as <code>0x3F</code> (?), in both modes</td>
+						</tr>
+						<tr>
+							<td>128</td>
+							<td><code>0x80</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0080</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>129</td>
+							<td><code>0x81</code></td>
+							<td colspan="4">control-code: orange — <code>U+0081</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>130</td>
+							<td><code>0x82</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0082</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>131</td>
+							<td><code>0x83</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0083</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>132</td>
+							<td><code>0x84</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+0084</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>133</td>
+							<td><code>0x85</code></td>
+							<td colspan="4">control-code: f1 — <code>U+0085</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>134</td>
+							<td><code>0x86</code></td>
+							<td colspan="4">control-code: f3 — <code>U+0086</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>135</td>
+							<td><code>0x87</code></td>
+							<td colspan="4">control-code: f5 — <code>U+0087</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>136</td>
+							<td><code>0x88</code></td>
+							<td colspan="4">control-code: f7 — <code>U+0088</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>137</td>
+							<td><code>0x89</code></td>
+							<td colspan="4">control-code: f2 — <code>U+0089</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>138</td>
+							<td><code>0x8A</code></td>
+							<td colspan="4">control-code: f4 — <code>U+008A</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>139</td>
+							<td><code>0x8B</code></td>
+							<td colspan="4">control-code: f6 — <code>U+008B</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>140</td>
+							<td><code>0x8C</code></td>
+							<td colspan="4">control-code: f8 — <code>U+008C</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>141</td>
+							<td><code>0x8D</code></td>
+							<td colspan="4">control-code: shifted RETURN — <code>U+008D</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>142</td>
+							<td><code>0x8E</code></td>
+							<td colspan="4">control-code: upper-case / graphics mode — <code>U+008E</code></td>
+							<td>VIC-20, C64, and later PETs</td>
+						</tr>
+						<tr>
+							<td>143</td>
+							<td><code>0x8F</code></td>
+							<td colspan="4"><em>(unused control-code)</em> — <code>U+008F</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>144</td>
+							<td><code>0x90</code></td>
+							<td colspan="4">control-code: black — <code>U+0090</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>145</td>
+							<td><code>0x91</code></td>
+							<td colspan="4">control-code: cursor up — <code>U+0091</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>146</td>
+							<td><code>0x92</code></td>
+							<td colspan="4">control-code: RVS OFF (reverse-video off) — <code>U+0092</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>147</td>
+							<td><code>0x93</code></td>
+							<td colspan="4">control-code: CLR (clear screen) — <code>U+0093</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>148</td>
+							<td><code>0x94</code></td>
+							<td colspan="4">control-code: INST (insert) — <code>U+0094</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>149</td>
+							<td><code>0x95</code></td>
+							<td colspan="4">control-code: brown — <code>U+0095</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>150</td>
+							<td><code>0x96</code></td>
+							<td colspan="4">control-code: light red — <code>U+0096</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>151</td>
+							<td><code>0x97</code></td>
+							<td colspan="4">control-code: grey 1 — <code>U+0097</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>152</td>
+							<td><code>0x98</code></td>
+							<td colspan="4">control-code: grey 2 — <code>U+0098</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>153</td>
+							<td><code>0x99</code></td>
+							<td colspan="4">control-code: light green — <code>U+0099</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>154</td>
+							<td><code>0x9A</code></td>
+							<td colspan="4">control-code: light blue — <code>U+009A</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>155</td>
+							<td><code>0x9B</code></td>
+							<td colspan="4">control-code: grey 3 — <code>U+009B</code></td>
+							<td>C64 only</td>
+						</tr>
+						<tr>
+							<td>156</td>
+							<td><code>0x9C</code></td>
+							<td colspan="4">control-code: purple — <code>U+009C</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>157</td>
+							<td><code>0x9D</code></td>
+							<td colspan="4">control-code: cursor left — <code>U+009D</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>158</td>
+							<td><code>0x9E</code></td>
+							<td colspan="4">control-code: yellow — <code>U+009E</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>159</td>
+							<td><code>0x9F</code></td>
+							<td colspan="4">control-code: cyan — <code>U+009F</code></td>
+							<td>VIC-20 and C64 (not the PET)</td>
+						</tr>
+						<tr>
+							<td>160</td>
+							<td><code>0xA0</code></td>
+							<td><em>(shifted space)</em></td>
+							<td><code>U+00A0</code> (no-break space)</td>
+							<td><em>(shifted space)</em></td>
+							<td><code>U+00A0</code> (no-break space)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>161</td>
+							<td><code>0xA1</code></td>
+							<td>▌</td>
+							<td><code>U+258C</code> (left half block)</td>
+							<td>▌</td>
+							<td><code>U+258C</code> (left half block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>162</td>
+							<td><code>0xA2</code></td>
+							<td>▄</td>
+							<td><code>U+2584</code> (lower half block)</td>
+							<td>▄</td>
+							<td><code>U+2584</code> (lower half block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>163</td>
+							<td><code>0xA3</code></td>
+							<td>▔</td>
+							<td><code>U+2594</code> (upper one eighth block)</td>
+							<td>▔</td>
+							<td><code>U+2594</code> (upper one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>164</td>
+							<td><code>0xA4</code></td>
+							<td>▁</td>
+							<td><code>U+2581</code> (lower one eighth block)</td>
+							<td>▁</td>
+							<td><code>U+2581</code> (lower one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>165</td>
+							<td><code>0xA5</code></td>
+							<td>▏</td>
+							<td><code>U+258F</code> (left one eighth block)</td>
+							<td>▏</td>
+							<td><code>U+258F</code> (left one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>166</td>
+							<td><code>0xA6</code></td>
+							<td>▒</td>
+							<td><code>U+2592</code> (medium shade)</td>
+							<td>▒</td>
+							<td><code>U+2592</code> (medium shade)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>167</td>
+							<td><code>0xA7</code></td>
+							<td>▕</td>
+							<td><code>U+2595</code> (right one eighth block)</td>
+							<td>▕</td>
+							<td><code>U+2595</code> (right one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>168</td>
+							<td><code>0xA8</code></td>
+							<td>🮏</td>
+							<td><code>U+1FB8F</code> (lower half medium shade)</td>
+							<td>🮏</td>
+							<td><code>U+1FB8F</code> (lower half medium shade)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>169</td>
+							<td><code>0xA9</code></td>
+							<td>◤</td>
+							<td><code>U+25E4</code> (black upper left triangle)</td>
+							<td>🮙</td>
+							<td><code>U+1FB99</code> (upper right to lower left fill)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>170</td>
+							<td><code>0xAA</code></td>
+							<td>🮇</td>
+							<td><code>U+1FB87</code> (right one quarter block)</td>
+							<td>🮇</td>
+							<td><code>U+1FB87</code> (right one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>171</td>
+							<td><code>0xAB</code></td>
+							<td>├</td>
+							<td><code>U+251C</code> (box drawings light vertical and right)</td>
+							<td>├</td>
+							<td><code>U+251C</code> (box drawings light vertical and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>172</td>
+							<td><code>0xAC</code></td>
+							<td>▗</td>
+							<td><code>U+2597</code> (quadrant lower right)</td>
+							<td>▗</td>
+							<td><code>U+2597</code> (quadrant lower right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>173</td>
+							<td><code>0xAD</code></td>
+							<td>└</td>
+							<td><code>U+2514</code> (box drawings light up and right)</td>
+							<td>└</td>
+							<td><code>U+2514</code> (box drawings light up and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>174</td>
+							<td><code>0xAE</code></td>
+							<td>┐</td>
+							<td><code>U+2510</code> (box drawings light down and left)</td>
+							<td>┐</td>
+							<td><code>U+2510</code> (box drawings light down and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>175</td>
+							<td><code>0xAF</code></td>
+							<td>▂</td>
+							<td><code>U+2582</code> (lower one quarter block)</td>
+							<td>▂</td>
+							<td><code>U+2582</code> (lower one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>176</td>
+							<td><code>0xB0</code></td>
+							<td>┌</td>
+							<td><code>U+250C</code> (box drawings light down and right)</td>
+							<td>┌</td>
+							<td><code>U+250C</code> (box drawings light down and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>177</td>
+							<td><code>0xB1</code></td>
+							<td>┴</td>
+							<td><code>U+2534</code> (box drawings light up and horizontal)</td>
+							<td>┴</td>
+							<td><code>U+2534</code> (box drawings light up and horizontal)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>178</td>
+							<td><code>0xB2</code></td>
+							<td>┬</td>
+							<td><code>U+252C</code> (box drawings light down and horizontal)</td>
+							<td>┬</td>
+							<td><code>U+252C</code> (box drawings light down and horizontal)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>179</td>
+							<td><code>0xB3</code></td>
+							<td>┤</td>
+							<td><code>U+2524</code> (box drawings light vertical and left)</td>
+							<td>┤</td>
+							<td><code>U+2524</code> (box drawings light vertical and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>180</td>
+							<td><code>0xB4</code></td>
+							<td>▎</td>
+							<td><code>U+258E</code> (left one quarter block)</td>
+							<td>▎</td>
+							<td><code>U+258E</code> (left one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>181</td>
+							<td><code>0xB5</code></td>
+							<td>▍</td>
+							<td><code>U+258D</code> (left three eighths block)</td>
+							<td>▍</td>
+							<td><code>U+258D</code> (left three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>182</td>
+							<td><code>0xB6</code></td>
+							<td>🮈</td>
+							<td><code>U+1FB88</code> (right three eighths block)</td>
+							<td>🮈</td>
+							<td><code>U+1FB88</code> (right three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>183</td>
+							<td><code>0xB7</code></td>
+							<td>🮂</td>
+							<td><code>U+1FB82</code> (upper one quarter block)</td>
+							<td>🮂</td>
+							<td><code>U+1FB82</code> (upper one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>184</td>
+							<td><code>0xB8</code></td>
+							<td>🮃</td>
+							<td><code>U+1FB83</code> (upper three eighths block)</td>
+							<td>🮃</td>
+							<td><code>U+1FB83</code> (upper three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>185</td>
+							<td><code>0xB9</code></td>
+							<td>▃</td>
+							<td><code>U+2583</code> (lower three eighths block)</td>
+							<td>▃</td>
+							<td><code>U+2583</code> (lower three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>186</td>
+							<td><code>0xBA</code></td>
+							<td>🭿</td>
+							<td><code>U+1FB7F</code> (right and lower one eighth block)</td>
+							<td>✓</td>
+							<td><code>U+2713</code> (check mark)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>187</td>
+							<td><code>0xBB</code></td>
+							<td>▖</td>
+							<td><code>U+2596</code> (quadrant lower left)</td>
+							<td>▖</td>
+							<td><code>U+2596</code> (quadrant lower left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>188</td>
+							<td><code>0xBC</code></td>
+							<td>▝</td>
+							<td><code>U+259D</code> (quadrant upper right)</td>
+							<td>▝</td>
+							<td><code>U+259D</code> (quadrant upper right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>189</td>
+							<td><code>0xBD</code></td>
+							<td>┘</td>
+							<td><code>U+2518</code> (box drawings light up and left)</td>
+							<td>┘</td>
+							<td><code>U+2518</code> (box drawings light up and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>190</td>
+							<td><code>0xBE</code></td>
+							<td>▘</td>
+							<td><code>U+2598</code> (quadrant upper left)</td>
+							<td>▘</td>
+							<td><code>U+2598</code> (quadrant upper left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>191</td>
+							<td><code>0xBF</code></td>
+							<td>▚</td>
+							<td><code>U+259A</code> (quadrant upper left and lower right)</td>
+							<td>▚</td>
+							<td><code>U+259A</code> (quadrant upper left and lower right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>192</td>
+							<td><code>0xC0</code></td>
+							<td>─</td>
+							<td><code>U+2500</code> (box drawings light horizontal) — or 🭹 <code>U+1FB79</code> (horizontal one eighth block-5)</td>
+							<td>─</td>
+							<td><code>U+2500</code> (box drawings light horizontal) — or 🭹 <code>U+1FB79</code> (horizontal one eighth block-5)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>193</td>
+							<td><code>0xC1</code></td>
+							<td>♠</td>
+							<td><code>U+2660</code> (black spade suit)</td>
+							<td>A</td>
+							<td><code>U+0041</code> (latin capital letter a)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>194</td>
+							<td><code>0xC2</code></td>
+							<td>🭲</td>
+							<td><code>U+1FB72</code> (vertical one eighth block-4)</td>
+							<td>B</td>
+							<td><code>U+0042</code> (latin capital letter b)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>195</td>
+							<td><code>0xC3</code></td>
+							<td>🭸</td>
+							<td><code>U+1FB78</code> (horizontal one eighth block-4)</td>
+							<td>C</td>
+							<td><code>U+0043</code> (latin capital letter c)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>196</td>
+							<td><code>0xC4</code></td>
+							<td>🭷</td>
+							<td><code>U+1FB77</code> (horizontal one eighth block-3)</td>
+							<td>D</td>
+							<td><code>U+0044</code> (latin capital letter d)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>197</td>
+							<td><code>0xC5</code></td>
+							<td>🭶</td>
+							<td><code>U+1FB76</code> (horizontal one eighth block-2)</td>
+							<td>E</td>
+							<td><code>U+0045</code> (latin capital letter e)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>198</td>
+							<td><code>0xC6</code></td>
+							<td>🭺</td>
+							<td><code>U+1FB7A</code> (horizontal one eighth block-6)</td>
+							<td>F</td>
+							<td><code>U+0046</code> (latin capital letter f)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>199</td>
+							<td><code>0xC7</code></td>
+							<td>🭱</td>
+							<td><code>U+1FB71</code> (vertical one eighth block-3)</td>
+							<td>G</td>
+							<td><code>U+0047</code> (latin capital letter g)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>200</td>
+							<td><code>0xC8</code></td>
+							<td>🭴</td>
+							<td><code>U+1FB74</code> (vertical one eighth block-6)</td>
+							<td>H</td>
+							<td><code>U+0048</code> (latin capital letter h)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>201</td>
+							<td><code>0xC9</code></td>
+							<td>╮</td>
+							<td><code>U+256E</code> (box drawings light arc down and left)</td>
+							<td>I</td>
+							<td><code>U+0049</code> (latin capital letter i)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>202</td>
+							<td><code>0xCA</code></td>
+							<td>╰</td>
+							<td><code>U+2570</code> (box drawings light arc up and right)</td>
+							<td>J</td>
+							<td><code>U+004A</code> (latin capital letter j)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>203</td>
+							<td><code>0xCB</code></td>
+							<td>╯</td>
+							<td><code>U+256F</code> (box drawings light arc up and left)</td>
+							<td>K</td>
+							<td><code>U+004B</code> (latin capital letter k)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>204</td>
+							<td><code>0xCC</code></td>
+							<td>🭼</td>
+							<td><code>U+1FB7C</code> (left and lower one eighth block)</td>
+							<td>L</td>
+							<td><code>U+004C</code> (latin capital letter l)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>205</td>
+							<td><code>0xCD</code></td>
+							<td>╲</td>
+							<td><code>U+2572</code> (box drawings light diagonal upper left to lower right)</td>
+							<td>M</td>
+							<td><code>U+004D</code> (latin capital letter m)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>206</td>
+							<td><code>0xCE</code></td>
+							<td>╱</td>
+							<td><code>U+2571</code> (box drawings light diagonal upper right to lower left)</td>
+							<td>N</td>
+							<td><code>U+004E</code> (latin capital letter n)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>207</td>
+							<td><code>0xCF</code></td>
+							<td>🭽</td>
+							<td><code>U+1FB7D</code> (left and upper one eighth block)</td>
+							<td>O</td>
+							<td><code>U+004F</code> (latin capital letter o)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>208</td>
+							<td><code>0xD0</code></td>
+							<td>🭾</td>
+							<td><code>U+1FB7E</code> (right and upper one eighth block)</td>
+							<td>P</td>
+							<td><code>U+0050</code> (latin capital letter p)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>209</td>
+							<td><code>0xD1</code></td>
+							<td>•</td>
+							<td><code>U+2022</code> (bullet) — or ● <code>U+25CF</code> (black circle)</td>
+							<td>Q</td>
+							<td><code>U+0051</code> (latin capital letter q)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>210</td>
+							<td><code>0xD2</code></td>
+							<td>🭻</td>
+							<td><code>U+1FB7B</code> (horizontal one eighth block-7)</td>
+							<td>R</td>
+							<td><code>U+0052</code> (latin capital letter r)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>211</td>
+							<td><code>0xD3</code></td>
+							<td>♥</td>
+							<td><code>U+2665</code> (black heart suit)</td>
+							<td>S</td>
+							<td><code>U+0053</code> (latin capital letter s)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>212</td>
+							<td><code>0xD4</code></td>
+							<td>🭰</td>
+							<td><code>U+1FB70</code> (vertical one eighth block-2)</td>
+							<td>T</td>
+							<td><code>U+0054</code> (latin capital letter t)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>213</td>
+							<td><code>0xD5</code></td>
+							<td>╭</td>
+							<td><code>U+256D</code> (box drawings light arc down and right)</td>
+							<td>U</td>
+							<td><code>U+0055</code> (latin capital letter u)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>214</td>
+							<td><code>0xD6</code></td>
+							<td>╳</td>
+							<td><code>U+2573</code> (box drawings light diagonal cross)</td>
+							<td>V</td>
+							<td><code>U+0056</code> (latin capital letter v)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>215</td>
+							<td><code>0xD7</code></td>
+							<td>○</td>
+							<td><code>U+25CB</code> (white circle) — or ◦ <code>U+25E6</code> (white bullet)</td>
+							<td>W</td>
+							<td><code>U+0057</code> (latin capital letter w)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>216</td>
+							<td><code>0xD8</code></td>
+							<td>♣</td>
+							<td><code>U+2663</code> (black club suit)</td>
+							<td>X</td>
+							<td><code>U+0058</code> (latin capital letter x)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>217</td>
+							<td><code>0xD9</code></td>
+							<td>🭵</td>
+							<td><code>U+1FB75</code> (vertical one eighth block-7)</td>
+							<td>Y</td>
+							<td><code>U+0059</code> (latin capital letter y)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>218</td>
+							<td><code>0xDA</code></td>
+							<td>♦</td>
+							<td><code>U+2666</code> (black diamond suit)</td>
+							<td>Z</td>
+							<td><code>U+005A</code> (latin capital letter z)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>219</td>
+							<td><code>0xDB</code></td>
+							<td>┼</td>
+							<td><code>U+253C</code> (box drawings light vertical and horizontal)</td>
+							<td>┼</td>
+							<td><code>U+253C</code> (box drawings light vertical and horizontal)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>220</td>
+							<td><code>0xDC</code></td>
+							<td>🮌</td>
+							<td><code>U+1FB8C</code> (left half medium shade)</td>
+							<td>🮌</td>
+							<td><code>U+1FB8C</code> (left half medium shade)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>221</td>
+							<td><code>0xDD</code></td>
+							<td>│</td>
+							<td><code>U+2502</code> (box drawings light vertical) — or 🭳 <code>U+1FB73</code> (vertical one eighth block-5)</td>
+							<td>│</td>
+							<td><code>U+2502</code> (box drawings light vertical) — or 🭳 <code>U+1FB73</code> (vertical one eighth block-5)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>222</td>
+							<td><code>0xDE</code></td>
+							<td>π</td>
+							<td><code>U+03C0</code> (greek small letter pi)</td>
+							<td>🮖</td>
+							<td><code>U+1FB96</code> (inverse checker board fill)</td>
+							<td>PET (lower-case / upper-case): 🮕 <code>U+1FB95</code> (checker board fill)<br />VIC-20 (lower-case / upper-case): 🮕 <code>U+1FB95</code> (checker board fill)</td>
+						</tr>
+						<tr>
+							<td>223</td>
+							<td><code>0xDF</code></td>
+							<td>◥</td>
+							<td><code>U+25E5</code> (black upper right triangle)</td>
+							<td>🮘</td>
+							<td><code>U+1FB98</code> (upper left to lower right fill)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>224</td>
+							<td><code>0xE0</code></td>
+							<td><em>(shifted space)</em></td>
+							<td><code>U+00A0</code> (no-break space)</td>
+							<td><em>(shifted space)</em></td>
+							<td><code>U+00A0</code> (no-break space)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>225</td>
+							<td><code>0xE1</code></td>
+							<td>▌</td>
+							<td><code>U+258C</code> (left half block)</td>
+							<td>▌</td>
+							<td><code>U+258C</code> (left half block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>226</td>
+							<td><code>0xE2</code></td>
+							<td>▄</td>
+							<td><code>U+2584</code> (lower half block)</td>
+							<td>▄</td>
+							<td><code>U+2584</code> (lower half block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>227</td>
+							<td><code>0xE3</code></td>
+							<td>▔</td>
+							<td><code>U+2594</code> (upper one eighth block)</td>
+							<td>▔</td>
+							<td><code>U+2594</code> (upper one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>228</td>
+							<td><code>0xE4</code></td>
+							<td>▁</td>
+							<td><code>U+2581</code> (lower one eighth block)</td>
+							<td>▁</td>
+							<td><code>U+2581</code> (lower one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>229</td>
+							<td><code>0xE5</code></td>
+							<td>▏</td>
+							<td><code>U+258F</code> (left one eighth block)</td>
+							<td>▏</td>
+							<td><code>U+258F</code> (left one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>230</td>
+							<td><code>0xE6</code></td>
+							<td>▒</td>
+							<td><code>U+2592</code> (medium shade)</td>
+							<td>▒</td>
+							<td><code>U+2592</code> (medium shade)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>231</td>
+							<td><code>0xE7</code></td>
+							<td>▕</td>
+							<td><code>U+2595</code> (right one eighth block)</td>
+							<td>▕</td>
+							<td><code>U+2595</code> (right one eighth block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>232</td>
+							<td><code>0xE8</code></td>
+							<td>🮏</td>
+							<td><code>U+1FB8F</code> (lower half medium shade)</td>
+							<td>🮏</td>
+							<td><code>U+1FB8F</code> (lower half medium shade)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>233</td>
+							<td><code>0xE9</code></td>
+							<td>◤</td>
+							<td><code>U+25E4</code> (black upper left triangle)</td>
+							<td>🮙</td>
+							<td><code>U+1FB99</code> (upper right to lower left fill)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>234</td>
+							<td><code>0xEA</code></td>
+							<td>🮇</td>
+							<td><code>U+1FB87</code> (right one quarter block)</td>
+							<td>🮇</td>
+							<td><code>U+1FB87</code> (right one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>235</td>
+							<td><code>0xEB</code></td>
+							<td>├</td>
+							<td><code>U+251C</code> (box drawings light vertical and right)</td>
+							<td>├</td>
+							<td><code>U+251C</code> (box drawings light vertical and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>236</td>
+							<td><code>0xEC</code></td>
+							<td>▗</td>
+							<td><code>U+2597</code> (quadrant lower right)</td>
+							<td>▗</td>
+							<td><code>U+2597</code> (quadrant lower right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>237</td>
+							<td><code>0xED</code></td>
+							<td>└</td>
+							<td><code>U+2514</code> (box drawings light up and right)</td>
+							<td>└</td>
+							<td><code>U+2514</code> (box drawings light up and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>238</td>
+							<td><code>0xEE</code></td>
+							<td>┐</td>
+							<td><code>U+2510</code> (box drawings light down and left)</td>
+							<td>┐</td>
+							<td><code>U+2510</code> (box drawings light down and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>239</td>
+							<td><code>0xEF</code></td>
+							<td>▂</td>
+							<td><code>U+2582</code> (lower one quarter block)</td>
+							<td>▂</td>
+							<td><code>U+2582</code> (lower one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>240</td>
+							<td><code>0xF0</code></td>
+							<td>┌</td>
+							<td><code>U+250C</code> (box drawings light down and right)</td>
+							<td>┌</td>
+							<td><code>U+250C</code> (box drawings light down and right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>241</td>
+							<td><code>0xF1</code></td>
+							<td>┴</td>
+							<td><code>U+2534</code> (box drawings light up and horizontal)</td>
+							<td>┴</td>
+							<td><code>U+2534</code> (box drawings light up and horizontal)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>242</td>
+							<td><code>0xF2</code></td>
+							<td>┬</td>
+							<td><code>U+252C</code> (box drawings light down and horizontal)</td>
+							<td>┬</td>
+							<td><code>U+252C</code> (box drawings light down and horizontal)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>243</td>
+							<td><code>0xF3</code></td>
+							<td>┤</td>
+							<td><code>U+2524</code> (box drawings light vertical and left)</td>
+							<td>┤</td>
+							<td><code>U+2524</code> (box drawings light vertical and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>244</td>
+							<td><code>0xF4</code></td>
+							<td>▎</td>
+							<td><code>U+258E</code> (left one quarter block)</td>
+							<td>▎</td>
+							<td><code>U+258E</code> (left one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>245</td>
+							<td><code>0xF5</code></td>
+							<td>▍</td>
+							<td><code>U+258D</code> (left three eighths block)</td>
+							<td>▍</td>
+							<td><code>U+258D</code> (left three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>246</td>
+							<td><code>0xF6</code></td>
+							<td>🮈</td>
+							<td><code>U+1FB88</code> (right three eighths block)</td>
+							<td>🮈</td>
+							<td><code>U+1FB88</code> (right three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>247</td>
+							<td><code>0xF7</code></td>
+							<td>🮂</td>
+							<td><code>U+1FB82</code> (upper one quarter block)</td>
+							<td>🮂</td>
+							<td><code>U+1FB82</code> (upper one quarter block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>248</td>
+							<td><code>0xF8</code></td>
+							<td>🮃</td>
+							<td><code>U+1FB83</code> (upper three eighths block)</td>
+							<td>🮃</td>
+							<td><code>U+1FB83</code> (upper three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>249</td>
+							<td><code>0xF9</code></td>
+							<td>▃</td>
+							<td><code>U+2583</code> (lower three eighths block)</td>
+							<td>▃</td>
+							<td><code>U+2583</code> (lower three eighths block)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>250</td>
+							<td><code>0xFA</code></td>
+							<td>🭿</td>
+							<td><code>U+1FB7F</code> (right and lower one eighth block)</td>
+							<td>✓</td>
+							<td><code>U+2713</code> (check mark)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>251</td>
+							<td><code>0xFB</code></td>
+							<td>▖</td>
+							<td><code>U+2596</code> (quadrant lower left)</td>
+							<td>▖</td>
+							<td><code>U+2596</code> (quadrant lower left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>252</td>
+							<td><code>0xFC</code></td>
+							<td>▝</td>
+							<td><code>U+259D</code> (quadrant upper right)</td>
+							<td>▝</td>
+							<td><code>U+259D</code> (quadrant upper right)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>253</td>
+							<td><code>0xFD</code></td>
+							<td>┘</td>
+							<td><code>U+2518</code> (box drawings light up and left)</td>
+							<td>┘</td>
+							<td><code>U+2518</code> (box drawings light up and left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>254</td>
+							<td><code>0xFE</code></td>
+							<td>▘</td>
+							<td><code>U+2598</code> (quadrant upper left)</td>
+							<td>▘</td>
+							<td><code>U+2598</code> (quadrant upper left)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>255</td>
+							<td><code>0xFF</code></td>
+							<td>π</td>
+							<td><code>U+03C0</code> (greek small letter pi)</td>
+							<td>🮖</td>
+							<td><code>U+1FB96</code> (inverse checker board fill)</td>
+							<td>PET (lower-case / upper-case): 🮕 <code>U+1FB95</code> (checker board fill)<br />VIC-20 (lower-case / upper-case): 🮕 <code>U+1FB95</code> (checker board fill)</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
+		</section>
+	</section>
+	<section>
+		<h1>Sources</h1>
+		<ul>
+			<li><a href="https://vintagecomputerstories.blogspot.com/2021/12/creating-petscii.html">Leonard Tramiel, “Creating PETSCII” (2021)</a></li>
+			<li><a href="https://archive.org/details/byte-magazine-1978-02"><cite>BYTE</cite> magazine, February 1978</a> — “Commodore Ships First PET Computers”</li>
+			<li><a href="https://archive.org/details/byte-magazine-1978-03"><cite>BYTE</cite> magazine, March 1978</a> — “User's Report: The PET 2001”</li>
+			<li><a href="https://archive.org/details/the-home-computer-wars">Michael S. Tomczyk, “The Home Computer Wars” (1984)</a></li>
+			<li><a href="http://www.zimmers.net/anonftp/pub/cbm/manuals/pet/CBM_Business_Computer_User_Manual-2001.pdf">CBM Business Computer User Manual</a></li>
+			<li><a href="https://archive.org/details/c64-programmer-ref">Commodore 64 Programmer's Reference Guide (1982)</a></li>
+			<li><a href="http://www.zimmers.net/anonftp/pub/cbm/manuals/c128/C128_Programmers_Reference_Guide.pdf">Commodore 128 Programmer's Reference Guide</a></li>
+			<li><a href="https://github.com/mist64/cbmsrc">Commodore ROM source code (mist64/cbmsrc)</a></li>
+			<li><a href="http://www.zimmers.net/anonftp/pub/cbm/firmware/characters/index-t.html">Commodore character ROMs (zimmers.net)</a></li>
+			<li><a href="http://www.zimmers.net/cbmpics/cbm/PETx/petfaq.html">PET FAQ (zimmers.net)</a></li>
+			<li><a href="https://www.aivosto.com/articles/petscii.pdf">Aivosto, “Commodore PETSCII character sets” (2014)</a></li>
+			<li><a href="https://www.unicode.org/L2/L2019/19025-terminals-prop.pdf">Unicode L2/19-025: Proposal to add characters from legacy computers and teletext to the UCS (2019)</a></li>
+			<li><a href="https://www.unicode.org/versions/Unicode13.0.0/">Unicode 13.0.0</a></li>
+			<li><a href="https://www.unicode.org/L2/L2019/19025-aux-mappings.zip">Unicode L2/19-025 mapping tables (Rebecca Bettencourt, 2018)</a></li>
+			<li><a href="https://www.kreativekorp.com/charset/map/petscii/">Kreative Korp, PETSCII to Unicode mapping</a></li>
+			<li><a href="https://czasopisma.uni.lodz.pl/Replay/article/view/5930">Markku Reunanen, Tero Heikkinen, and Anders Carlsson, “PETSCII – A Character Set and a Creative Platform”, <cite>Replay. The Polish Journal of Game Studies</cite> 5(1), 2018</a></li>
+			<li><a href="https://csdb.dk/event/?id=2139">Plain PETSCII Graphics Competition 2013 (CSDb)</a></li>
+			<li><a href="https://wiki.synchro.net/howto:petscii">Synchronet: PETSCII</a></li>
+			<li><a href="https://github.com/X16Community/x16-docs">Commander X16 documentation</a></li>
+		</ul>
+	</section>
+	<footer>
+		<include src="../author.html" />
+		<include src="../license.html" />
+	</footer>
+</article>
+</main>
+</body>
+</html>
